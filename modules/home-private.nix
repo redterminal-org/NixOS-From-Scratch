@@ -35,7 +35,7 @@ let
   importPrivateData = pkgs.writeShellScript "import-private-data" ''
     set -u
 
-    marker="$HOME/.local/state/.nixos-private-data-import-tried"
+    marker="$HOME/.local/state/.nixos-private-data-import-marker"
     tmpdir="$HOME/.cache/nixos-private-data"
 
     if [ -e "$marker" ]; then
@@ -161,6 +161,14 @@ let
       exit 1
     fi
 
+    if [ ! -d "$tmpdir/rogallo" ]; then
+      ${notify} \
+        "Private data error" \
+        "The downloaded data does not contain rogallo."
+
+      exit 1
+    fi
+
     if ! ${pkgs.gnupg}/bin/gpg \
       --batch \
       --import "$tmpdir/gnupg/secret.asc"; then
@@ -213,6 +221,21 @@ let
       -exec chmod 700 {} \;
 
     find "$HOME/.password-store" \
+      -type f \
+      -exec chmod 600 {} \;
+
+    mkdir -p "$HOME/.local/share/rogallo"
+    chmod 700 "$HOME/.local/share/rogallo"
+
+    ${pkgs.coreutils}/bin/cp -a \
+      "$tmpdir/rogallo/." \
+      "$HOME/.local/share/rogallo/"
+
+    find "$HOME/.local/share/rogallo" \
+      -type d \
+      -exec chmod 700 {} \;
+
+    find "$HOME/.local/share/rogallo" \
       -type f \
       -exec chmod 600 {} \;
 

@@ -1,10 +1,12 @@
 *CHANGELOG*
 
 ## 1.1.0
+### Security: Added "rogallo" directory to secrets
+* The Directory "rogallo" was added to the secrets, which may contain Client Certificates with secret keys, bookmarks, history and a few other things.
 ### Added: jq, wev, pipx, gemget, rogallo, gtl
 * all-packages.nix: jq, wev
 * home-packages: pipx, gemget
-* pipx: rogallo
+* pipx: rogallo (TUI Gemini Browser)
 * bin: gtl - Gemini Tinylog Reader (binary)
 ### Added: rofimoji Emoji Picker on "super+."
 ### Config: added swallowing; added application/pdf
