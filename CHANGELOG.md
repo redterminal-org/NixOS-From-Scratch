@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.0.0 - First Major release
+### Changed: wofi, SyncNC; Added: elinks
+* Made fonts of wofi and SyncNC a little bigger
+* Added elinks terminal www browser to view HTML emails in NeoMutt
 ### Initial Commit
 * Removed all secrets from Repo
 * Added import of secrets (gpg, ssh, password-store) from (local) SSH server

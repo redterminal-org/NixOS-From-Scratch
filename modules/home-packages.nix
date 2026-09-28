@@ -15,6 +15,7 @@
     freetube
     neomutt
     urlscan
+    elinks
     mpv
 
     # Notification System
