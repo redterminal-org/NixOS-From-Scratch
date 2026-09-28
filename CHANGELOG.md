@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 1.1.0
+### Added: rofimoji Emoji Picker on "super+."
 ### Config: added swallowing; added application/pdf
 * Added swallowing to alacritty in hyprland.lua
 + Added application/pdf -> zathura to home-applications.nix

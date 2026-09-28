@@ -276,6 +276,9 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/wofi/passmenu.sh"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("~/.config/wofi/otpmenu.sh"))
 -- wofi - Open the radio menu.
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/.config/wofi/radio.sh"))
+-- rofmoji - Emoji picker
+hl.bind(
+  mainMod .. " + period", hl.dsp.exec_cmd("rofimoji --selector wofi --action clipboard"))
 
 -- brightnesctl - control screen brightness
 hl.bind(

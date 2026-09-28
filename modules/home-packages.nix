@@ -18,6 +18,7 @@
     elinks
     mpv
     zathura
+    wtype
 
     # Notification System
     libnotify
@@ -26,5 +27,6 @@
     # Gadgets
     todo-txt-cli
     starship
+    rofimoji
   ];
 }
