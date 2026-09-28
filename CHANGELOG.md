@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.0.0 - First Major release
+### Config: added "xdg.desktopEntries.qutebrowser-xdg"
+* Added Qutebrowser configuration for eg. xdg-open
 ### Config: added ".mailcap"; Added: zathura
 * Added .mailcap configuration to home-applications
 * Added zathura PDF viewer to home-packages.nix

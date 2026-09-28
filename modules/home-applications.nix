@@ -38,30 +38,30 @@
 
     defaultApplications = {
       # Web
-      "text/html" = "qutebrowser.desktop";
-      "application/xhtml+xml" = "qutebrowser.desktop";
-      "x-scheme-handler/http" = "qutebrowser.desktop";
-      "x-scheme-handler/https" = "qutebrowser.desktop";
+      "text/html" = "qutebrowser-xdg.desktop";
+      "application/xhtml+xml" = "qutebrowser-xdg.desktop";
+      "x-scheme-handler/http" = "qutebrowser-xdg.desktop";
+      "x-scheme-handler/https" = "qutebrowser-xdg.desktop";
 
       # PDF
       "application/pdf" = "org.pwmt.zathura.desktop";
 
       # Plain text
-      "text/plain" = "qutebrowser.desktop";
+      "text/plain" = "qutebrowser-xdg.desktop";
 
       # XML
-      "application/xml" = "qutebrowser.desktop";
-      "text/xml" = "qutebrowser.desktop";
+      "application/xml" = "qutebrowser-xdg.desktop";
+      "text/xml" = "qutebrowser-xdg.desktop";
 
       # JSON
-      "application/json" = "qutebrowser.desktop";
+      "application/json" = "qutebrowser-xdg.desktop";
 
       # Images
-      "image/png" = "qutebrowser.desktop";
-      "image/jpeg" = "qutebrowser.desktop";
-      "image/gif" = "qutebrowser.desktop";
-      "image/webp" = "qutebrowser.desktop";
-      "image/svg+xml" = "qutebrowser.desktop";
+      "image/png" = "qutebrowser-xdg.desktop";
+      "image/jpeg" = "qutebrowser-xdg.desktop";
+      "image/gif" = "qutebrowser-xdg.desktop";
+      "image/webp" = "qutebrowser-xdg.desktop";
+      "image/svg+xml" = "qutebrowser-xdg.desktop";
 
       # Audio
       "audio/mpeg" = "mpv.desktop";
@@ -91,4 +91,28 @@
     };
   };
 
+  xdg.desktopEntries.qutebrowser-xdg = {
+    name = "Qutebrowser (XDG)";
+    genericName = "Web Browser";
+    exec = "qutebrowser --target tab %U";
+    terminal = false;
+    type = "Application";
+
+    mimeType = [
+      "text/html"
+      "application/xhtml+xml"
+      "image/png"
+      "image/jpeg"
+      "image/gif"
+      "image/webp"
+      "image/svg+xml"
+      "x-scheme-handler/http"
+      "x-scheme-handler/https"
+    ];
+
+    categories = [
+      "Network"
+      "WebBrowser"
+    ];
+  };
 }
