@@ -17,6 +17,7 @@
     urlscan
     elinks
     mpv
+    zathura
 
     # Notification System
     libnotify
