@@ -50,6 +50,110 @@ The following settings should be reviewed and adjusted:
   - Review `vm.nix` if the regression VM is used.
   - Adjust memory, CPU, disk size and other VM settings to your requirements.
 
+## Packaged Software
+
+### System
+
+- `wget`: Command-line file downloader
+- `curl`: Command-line data transfer tool
+- `git`: Distributed version control system
+- `bat`: Cat replacement with syntax highlighting
+- `eza`: Modern replacement for `ls`
+- `htop`: Interactive process viewer
+- `maim`: Screenshot utility
+- `acpi`: Battery and power information tool
+- `ripgrep`: Fast recursive search tool
+- `lsof`: Lists open files and processes
+- `tree`: Directory tree viewer
+- `inetutils`: Network utilities
+- `bsd-finger`: User information utility
+- `brightnessctl`: Screen brightness control
+- `jq`: Command-line JSON processor
+- `wev`: Wayland input event viewer
+- `wofi`: Wayland application launcher
+- `waybar`: Wayland status bar
+- `hyprpaper`: Hyprland wallpaper utility
+- `dolphin`: KDE file manager
+- `snip`: Wayland screenshot utility
+- `grim`: Wayland screenshot tool
+- `slurp`: Wayland region selection tool
+- `wl-clipboard`: Wayland clipboard utilities
+
+### User Applications
+
+- `pass`: Unix password manager
+- `pass-otp`: One-time password extension for `pass`
+- `oath-toolkit`: Tools for one-time password authentication
+- `alacritty`: GPU-accelerated terminal emulator
+- `kitty`: GPU-accelerated terminal emulator
+- `ranger`: Console file manager
+- `qutebrowser`: Keyboard-focused web browser
+- `librewolf`: Privacy-focused web browser
+- `freetube`: Privacy-focused YouTube client
+- `neomutt`: Terminal mail client
+- `urlscan`: URL extraction and selection tool
+- `elinks`: Text-based web browser
+- `mpv`: Media player
+- `zathura`: Lightweight document viewer
+- `wtype`: Wayland keyboard input tool
+- `pipx`: Installer and runner for Python applications
+- `gemget`: Command-line Gemini client
+- `rogallo`: TUI Gemini Client
+- `libnotify`: Desktop notification library
+- `swaynotificationcenter`: Wayland notification center
+- `todo-txt-cli`: Command-line todo.txt manager
+- `starship`: Cross-shell prompt
+- `rofimoji`: Emoji and Unicode character picker
+
+### Development Tools
+
+- `lazygit`: Terminal UI for Git
+- `fzf`: Command-line fuzzy finder
+- `par`: Paragraph reformatter
+- `nixfmt`: Nix code formatter
+- `nodejs`: JavaScript runtime
+- `gcc`: GNU Compiler Collection
+- `lua-language-server`: Lua language server
+- `pyright`: Python language server and type checker
+- `shfmt`: Shell script formatter
+- `nil`: Nix language server
+- `shellcheck`: Shell script static analyzer
+- `LazyVim`: Neovim configuration framework
+
+### Desktop and System Services
+
+- `Hyprland`: Wayland compositor
+- `ly`: TUI display manager
+- `PipeWire`: Audio and multimedia server
+- `NetworkManager`: Network management service
+- `GnuPG`: Encryption and digital signature suite
+- `gpg-agent`: GnuPG authentication agent
+- `pinentry-qt`: Qt graphical PIN entry program
+- `SwayNC`: Wayland notification center
+- `Home Manager`: Declarative user environment manager
+
+### Fonts
+
+- `JetBrains Mono Nerd Font`: Monospaced programming font with Nerd Font icons
+
+### Editor
+
+- `Neovim`: Extensible terminal-based text editor
+- `LazyVim`: Neovim configuration framework
+
+### Shell
+
+- `Bash`: Bourne Again Shell
+- `McFly`: Shell history search tool
+- `Starship`: Cross-shell prompt
+
+### Authentication and Secrets
+
+- `GnuPG`: OpenPGP encryption and signing
+- `pass`: Command-line password manager
+- `pass-otp`: One-time password support for `pass`
+- `SSH`: Secure remote access and authentication
+
 ### Importing Secrets
 
 Private data is not stored in the Nix configuration or Nix store. It can be imported interactively from an SSH server during the first login.
@@ -64,27 +168,31 @@ Private data is not stored in the Nix configuration or Nix store. It can be impo
 
 The Secrets directory on the SSH server must have the following structure:
 
-```text
-secrets/
-├── gnupg/
-│   ├── public.asc
-│   └── secret.asc
-├── ssh/
-│   ├── id_*
-│   └── *.pub
-└── password-store/
-    └── ...
-```
+    secrets/
+    ├── gnupg/
+    │   ├── public.asc
+    │   └── secret.asc
+    ├── ssh/
+    │   ├── id_*
+    │   └── *.pub
+    ├── password-store/
+    │   └── ...
+    └── rogallo/
+        ├── bookmarks.json
+        ├── client_certificates/
+        ├── command-history.json
+        ├── known_hosts
+        ├── location-history.json
+        └── navigation-history.json
 
 The directory name itself is arbitrary. Its path is entered during the import process.
 
 The imported data is copied to:
 
-```text
-~/.gnupg/
-~/.ssh/
-~/.password-store/
-```
+    ~/.gnupg/
+    ~/.ssh/
+    ~/.password-store/
+    ~/.local/share/rogallo/
 
 The GPG keys are imported into the user's local GPG keyring.
 

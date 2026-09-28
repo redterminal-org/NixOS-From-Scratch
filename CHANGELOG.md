@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 1.1.0
+### README.md updated
 ### Security: Added "rogallo" directory to secrets
 * The Directory "rogallo" was added to the secrets, which may contain Client Certificates with secret keys, bookmarks, history and a few other things.
 ### Added: jq, wev, pipx, gemget, rogallo, gtl
