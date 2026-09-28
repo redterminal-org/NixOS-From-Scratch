@@ -412,3 +412,15 @@ hl.window_rule({
   size = { "(monitor_w*0.6)", "(monitor_h*0.7)" },
   center = true,
 })
+
+
+-----------------
+--- SWALLOWING ---
+-----------------
+
+hl.config({
+  misc = {
+    enable_swallow = true,
+    swallow_regex = "^OnTop$",
+  },
+})

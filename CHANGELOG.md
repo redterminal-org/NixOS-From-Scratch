@@ -1,5 +1,10 @@
 *CHANGELOG*
 
+## 1.1.0
+### Config: added swallowing; added application/pdf
+* Added swallowing to alacritty in hyprland.lua
++ Added application/pdf -> zathura to home-applications.nix
+
 ## 1.0.0 - First Major release
 ### Config: added "xdg.desktopEntries.qutebrowser-xdg"
 * Added Qutebrowser configuration for eg. xdg-open

@@ -26,6 +26,9 @@
     application/xml; cat %s; copiousoutput
     text/xml; cat %s; copiousoutput
 
+    # Display PDF in zathura
+    application/pdf; zathura %s
+
     # Display JSON as plain text.
     application/json; cat %s; copiousoutput
 
