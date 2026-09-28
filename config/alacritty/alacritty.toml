@@ -1,0 +1,47 @@
+[colors.bright]
+black = "#202020"
+blue = "#8080FF"
+cyan = "#80FFFF"
+green = "#40FF40"
+magenta = "#FF80FF"
+red = "#FF4040"
+white = "#FFFFFF"
+yellow = "#FFFF80"
+
+[colors.normal]
+black = "#000000"
+blue = "#4040FF"
+cyan = "#00FFFF"
+green = "#00FF00"
+magenta = "#FF00FF"
+red = "#FF0000"
+white = "#CCCCCC"
+yellow = "#FFFF00"
+
+[colors.primary]
+background = "#303030"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+#family = "JetBrainsMonoNL Nerd Font Mono"
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+opacity = 1.0
+padding = {x = 0, y = 0}
+dynamic_padding = true
+class = {instance = "alacritty", general = "OnTop"}
+
+[cursor]
+style = {shape = "Beam", blinking = "Always"}
+blink_timeout = 0
+

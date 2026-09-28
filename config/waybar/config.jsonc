@@ -1,0 +1,95 @@
+//-*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    // Choose the order of the modules
+    "modules-left": [
+        "ext/workspaces",
+        "custom/sep"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "custom/sep",
+        "network",
+        "custom/sep",
+        "pulseaudio",
+        "custom/sep",
+        "cpu",
+        "custom/sep",
+        "memory",
+        "custom/sep",
+        "disk",
+        "custom/sep",
+        "battery",
+        "custom/sep",
+        "custom/date",
+        "custom/sep",
+        "tray"
+    ],
+
+    // Modules configuration
+    "ext/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 9
+        }
+    },
+    "hyprland/window": {
+        "max-length": 40,
+        "separate-outputs": false,
+        "format": "{}"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "custom/date": {
+        "exec": "LC_TIME=de_DE.UTF-8 date '+%a, %d %b %H:%M:%S'",
+        "interval": 1,
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "Mem: {used}GiB"
+    },
+    "disk": {
+        "interval": 60,
+        "path": "/",
+        "format": "Disk: {free}"
+    },
+    "pulseaudio": {
+        "format": "Vol: {volume}%",
+        "format-muted": "Vol: M",
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "Bat: {capacity}%",
+        "format-plugged": "Bat: {capacity}% ",
+        "format-alt": "Bat: {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format": "Online",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "custom/sep": {
+        "format": "|",
+        "interval": 0
+    }
+}
