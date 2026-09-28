@@ -1,3 +1,5 @@
+{ config, pkgs, ... }:
+
 {
   # QuteBrowser Configuration
   home.file.".config/qutebrowser/config.py".source =
@@ -118,4 +120,56 @@
       "WebBrowser"
     ];
   };
+
+home.activation.copyGTLConfigFiles =
+  config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    target="${config.home.homeDirectory}/.config/gtl"
+    sourceRoot="${../config/gtl}"
+
+    mkdir -p "$target"
+
+    ${pkgs.findutils}/bin/find "$sourceRoot" -type f -exec sh -c '
+      root="$1"
+      target="$2"
+      shift 2
+
+      for source; do
+        relative="''${source#"$root"/}"
+        destination="$target/$relative"
+
+        if [ ! -e "$destination" ]; then
+          mkdir -p "$(dirname "$destination")"
+          cp "$source" "$destination"
+        fi
+
+        chmod 644 "$destination"
+      done
+    ' sh "$sourceRoot" "$target" {} +
+  '';
+
+home.activation.copyRogalloConfigFiles =
+  config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    target="${config.home.homeDirectory}/.config/rogallo"
+    sourceRoot="${../config/rogallo}"
+
+    mkdir -p "$target"
+
+    ${pkgs.findutils}/bin/find "$sourceRoot" -type f -exec sh -c '
+      root="$1"
+      target="$2"
+      shift 2
+
+      for source; do
+        relative="''${source#"$root"/}"
+        destination="$target/$relative"
+
+        if [ ! -e "$destination" ]; then
+          mkdir -p "$(dirname "$destination")"
+          cp "$source" "$destination"
+        fi
+
+        chmod 644 "$destination"
+      done
+    ' sh "$sourceRoot" "$target" {} +
+  '';
 }

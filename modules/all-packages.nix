@@ -16,6 +16,8 @@
     inetutils
     bsd-finger
     brightnessctl
+    jq
+    wev
 
     # Hyprland tools
     wofi

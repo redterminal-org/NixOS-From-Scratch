@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -9,6 +9,7 @@
     oath-toolkit
 
     alacritty
+    kitty
     ranger
     qutebrowser
     librewolf
@@ -19,6 +20,8 @@
     mpv
     zathura
     wtype
+    pipx
+    gemget
 
     # Notification System
     libnotify
@@ -29,4 +32,10 @@
     starship
     rofimoji
   ];
+
+  # Rogallo Install / Upgrade
+  home.activation.updatePipxPackages =
+    config.lib.dag.entryAfter [ "writeBoundary" ] ''
+      ${pkgs.pipx}/bin/pipx upgrade rogallo || ${pkgs.pipx}/bin/pipx install rogallo
+    '';
 }

@@ -1,6 +1,11 @@
 *CHANGELOG*
 
 ## 1.1.0
+### Added: jq, wev, pipx, gemget, rogallo, gtl
+* all-packages.nix: jq, wev
+* home-packages: pipx, gemget
+* pipx: rogallo
+* bin: gtl - Gemini Tinylog Reader (binary)
 ### Added: rofimoji Emoji Picker on "super+."
 ### Config: added swallowing; added application/pdf
 * Added swallowing to alacritty in hyprland.lua
