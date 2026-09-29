@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.1.0
+### Config: LazyGit - Added function for git-push-all
+* Added a LazyGit function ("CTRL+y") to push to all remotes
 ### Config: Networking firewall activated
 * Activated network firewall in all-network.nix
 ### Config: Changed home-gpg.nix to home-ssh-gpg.nix
