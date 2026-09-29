@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.1.0
+### README.md fixed
+* Removed the comment "focused on reproducibility", because flake.lock is in .gitignore and a build always uses the newest NixOS packages.
 ### Config: LazyGit - Added function for git-push-all
 * Added a LazyGit function ("CTRL+y") to push to all remotes
 ### Config: Networking firewall activated

@@ -1,6 +1,6 @@
 # NixOS-From-Scratch v1.0.0 - NixOS 26.05
 
-A modular NixOS configuration built from scratch with a focus on reproducibility, a clean separation between system and user configuration, and a Wayland desktop environment based on Hyprland.
+A modular NixOS configuration built from scratch with a focus on a clean separation between system and user configuration, and a Wayland desktop environment based on Hyprland.
 
 The configuration includes NixOS 26.05, Home Manager, Hyprland, Waybar, Wofi, SwayNC, LazyVim, PipeWire, NetworkManager, GPG and SSH integration, as well as separate configurations for the real system and a regression VM.
 
