@@ -4,14 +4,19 @@ A modular NixOS configuration built from scratch with a focus on reproducibility
 
 The configuration includes NixOS 26.05, Home Manager, Hyprland, Waybar, Wofi, SwayNC, LazyVim, PipeWire, NetworkManager, GPG and SSH integration, as well as separate configurations for the real system and a regression VM.
 
+**Mirrors:** \
+[https://github.com/redterminal-org/NixOS-From-Scratch](https://github.com/redterminal-org/NixOS-From-Scratch) \
+[https://codeberg.org/fab/NixOS-From-Scratch](https://codeberg.org/fab/NixOS-From-Scratch)
+
 ---
 
 **!!! WARNING !!!**
+
 This is mainly for my personal learning purposes but can be used for learning and testing by others as well. This is my **first** try with NixOS, so don't expect too much.
 
 I expect you to have a basic knowledge on how to set up a basic NixOS system from the NixOS installer, like creating a partition layout and do a basic `nixos-generate-config` on your mounted filesystem.
 
-You can use the Discussion section of this Repository, if you have problems or questions related to this NixOS configuration. Please leave the Issue tracker clean for my personal changes.
+You can use the Discussion section on the Github repository, if you have problems or questions related to this NixOS configuration. You can also use the Issue Tracker on the Github and Codeberg.org, if you found a problem.
 
 ---
 
@@ -21,7 +26,7 @@ This configuration is intended as a starting point. It can be used as it is but 
 
 The following settings should be reviewed and adjusted:
 
-- **Locale and keyboard layout**
+- **Locale and keyboard layout (currently german)**
   - Edit `modules/all-localization.nix`.
   - Adjust `time.timeZone` to your time zone.
   - Adjust `i18n.defaultLocale` to your preferred locale.
@@ -164,7 +169,7 @@ Private data is not stored in the Nix configuration or Nix store. It can be impo
 4. Enter the SSH destination when prompted:
    - `user@server`
 5. Enter the path to the Secrets directory when prompted.
-6. The script downloads the directory and imports the contained GPG keys, SSH keys and password store.
+6. The script downloads the directory and imports the contained GPG keys, SSH keys, password store and the rogallo Client Certificates, bookmarks, history and so on.
 
 The Secrets directory on the SSH server must have the following structure:
 
