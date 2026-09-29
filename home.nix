@@ -5,7 +5,7 @@
     lazyvim.homeManagerModules.default
 
     ./modules/home-shell.nix
-    ./modules/home-gpg.nix
+    ./modules/home-ssh-gpg.nix
     ./modules/home-private.nix
     ./modules/home-applications.nix
     ./modules/home-desktop.nix

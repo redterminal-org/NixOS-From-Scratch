@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.1.0
+### Config: Changed home-gpg.nix to home-ssh-gpg.nix
+* Added ssh and ssh-agent to keep once used secret key passwords for 24h
+* gpg now also keeps secret key passwords for 24h
 ### README.md updated
 ### README.md updated
 ### Security: Added "rogallo" directory to secrets

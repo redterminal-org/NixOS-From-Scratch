@@ -1,9 +1,26 @@
 { config, pkgs, ... }:
 
 {
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+
+    settings."*" = {
+      addKeysToAgent = "24h";
+    };
+  };
+
+  services.ssh-agent = {
+    enable = true;
+    defaultMaximumIdentityLifetime = 86400;
+  };
+
   services.gpg-agent = {
     enable = true;
     pinentry.package = pkgs.pinentry-qt;
+
+    defaultCacheTtl = 86400;
+    maxCacheTtl = 86400;
   };
 
   programs.gpg = {
