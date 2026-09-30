@@ -19,12 +19,12 @@ hl.monitor({
 --- MY PROGRAMS ---
 -------------------
 
-local terminal = "alacritty"
+local terminal = "kitty --class OnTop"
 local fileManager = "dolphin"
 local menu = "wofi --show drun"
 local reloadWaybar = "pkill waybar; waybar"
 local snip = "snip"
-local dropdownTerminal = "alacritty --class dropdown-terminal"
+local dropdownTerminal = "kitty --class dropdown-terminal"
 
 
 -----------------
