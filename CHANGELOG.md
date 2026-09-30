@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 1.1.0
+### LazyVim: improved Ranger integration
+* Enlarged the rnvimr floating window to leave only one character of margin.
+* Use Enter instead of E to open files in LazyVim.
+* Open selected files as LazyVim buffers and close Ranger after picking.
 ### Config: clean up and update desktop configuration
 * remove obsolete Alacritty configuration
 * clean up Ranger configuration and remove unused files
