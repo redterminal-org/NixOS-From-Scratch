@@ -1,6 +1,19 @@
 *CHANGELOG*
 
 ## 1.1.0
+### Config: clean up and update desktop configuration
+* remove obsolete Alacritty configuration
+* clean up Ranger configuration and remove unused files
+* merge and simplify Qutebrowser configuration
+* update Waybar styling to Tokyo Night colors
+* update Wofi styling to Tokyo Night colors
+* reduce Wofi input height without changing font size
+* clean up Hyprland configuration
+* simplify dropdown terminal configuration
+* fix various configuration errors and inconsistencies
+### LazyVim: use mvimr for Ranger
+### LazyVim: deploy mvimr plugin configuration
+### LazyVim: add mvimr Ranger integration
 ### README.md fixed
 * Removed the comment "focused on reproducibility", because flake.lock is in .gitignore and a build always uses the newest NixOS packages.
 ### Config: LazyGit - Added function for git-push-all

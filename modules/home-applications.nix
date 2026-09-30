@@ -6,8 +6,6 @@
     ../config/qutebrowser/config.py;
   home.file.".config/qutebrowser/base16_gruvbox_dark_hard.py".source =
     ../config/qutebrowser/base16_gruvbox_dark_hard.py;
-  home.file.".config/qutebrowser/autoconfig.yml".source =
-    ../config/qutebrowser/autoconfig.yml;
 
   # Other programs
   home.file.".config/alacritty".source = ../config/alacritty;

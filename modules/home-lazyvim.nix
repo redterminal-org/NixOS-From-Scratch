@@ -3,7 +3,10 @@
 {
   home.file.".config/nvim/lua/config/keymaps.lua".source =
     ../config/nvim/lua/config/keymaps.lua;
-
+  home.file.".config/nvim/lua/plugins/linter.lua".source =
+    ../config/nvim/lua/plugins/linter.lua;
+  home.file.".config/nvim/lua/plugins/lsp.lua".source =
+    ../config/nvim/lua/plugins/lsp.lua;
   home.file.".config/nvim/lua/plugins/rnvimr.lua".source =
     ../config/nvim/lua/plugins/rnvimr.lua;
 
