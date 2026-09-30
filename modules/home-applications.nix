@@ -8,7 +8,6 @@
     ../config/qutebrowser/base16_gruvbox_dark_hard.py;
 
   # Other programs
-  home.file.".config/alacritty".source = ../config/alacritty;
   home.file.".config/kitty".source = ../config/kitty;
   home.file.".config/yazi".source = ../config/yazi;
   home.file.".local/bin/yazi".source = ../config/bin/yazi;
