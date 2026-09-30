@@ -1,25 +1,28 @@
-[colors.bright]
-black = "#202020"
-blue = "#8080FF"
-cyan = "#80FFFF"
-green = "#40FF40"
-magenta = "#FF80FF"
-red = "#FF4040"
-white = "#FFFFFF"
-yellow = "#FFFF80"
-
-[colors.normal]
-black = "#000000"
-blue = "#4040FF"
-cyan = "#00FFFF"
-green = "#00FF00"
-magenta = "#FF00FF"
-red = "#FF0000"
-white = "#CCCCCC"
-yellow = "#FFFF00"
+# Tokyo Night
 
 [colors.primary]
-background = "#303030"
+background = "#1a1b26"
+foreground = "#c0caf5"
+
+[colors.normal]
+black = "#15161e"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#a9b1d6"
+
+[colors.bright]
+black = "#414868"
+red = "#ff899d"
+green = "#9fe044"
+yellow = "#faba4a"
+blue = "#8db0ff"
+magenta = "#c7a9ff"
+cyan = "#a4daff"
+white = "#c0caf5"
 
 [env]
 TERM = "xterm-256color"
@@ -44,4 +47,3 @@ class = {instance = "alacritty", general = "OnTop"}
 [cursor]
 style = {shape = "Beam", blinking = "Always"}
 blink_timeout = 0
-

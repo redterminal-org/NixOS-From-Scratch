@@ -10,7 +10,7 @@
 
     alacritty
     kitty
-    ranger
+    yazi
     qutebrowser
     librewolf
     freetube
