@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, pkgs, osConfig, ... }:
 
 {
   services.swaync.enable = true;
@@ -45,4 +45,24 @@
       };
     };
   };
+
+  home.file.".config/user-dirs.conf".text = ''
+    enabled=True
+  '';
+
+  home.activation.updateXdgUserDirs =
+    config.lib.dag.entryAfter [ "linkGeneration" ] ''
+      export LANG="${osConfig.i18n.defaultLocale}"
+      export LC_ALL="${osConfig.i18n.defaultLocale}"
+
+      ${pkgs.xdg-user-dirs}/bin/xdg-user-dirs-update --force
+
+      download_dir="$(${pkgs.xdg-user-dirs}/bin/xdg-user-dir DOWNLOAD)"
+      if [ "$download_dir" != "$HOME/Downloads" ] && [ -d "$download_dir" ]; then
+        rmdir "$download_dir" 2>/dev/null || true
+      fi
+
+      ${pkgs.xdg-user-dirs}/bin/xdg-user-dirs-update --set DOWNLOAD "$HOME/Downloads"
+      mkdir -p "$HOME/Downloads"
+    '';
 }

@@ -1,5 +1,10 @@
 *CHANGELOG*
 
+## 1.2.0
+### Config: Create ~/Downloads
+* This creates a "Downloads" folder and all other user directories in the configured language.
+* The "Downloads" folder always remains "Downloads", regardless of the configured language.
+
 ## 1.1.0
 ### LazyVim: improved Ranger integration
 * Enlarged the rnvimr floating window to leave only one character of margin.
