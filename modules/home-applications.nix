@@ -13,6 +13,7 @@
   home.file.".config/starship.toml".source = ../config/starship.toml;
   home.file.".config/todo".source = ../config/todo;
   home.file.".config/Xresources".source = ../config/Xresources;
+  home.file.".config/ranger".source = ../config/ranger;
 
   # Configure MIME handlers for NeoMutt.
   home.file.".mailcap".text = ''

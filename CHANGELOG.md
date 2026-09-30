@@ -1,6 +1,11 @@
 *CHANGELOG*
 
 ## 1.2.0
+### Config: fix NixOS configuration
+* Install the Ranger configuration through Home Manager.
+* Remove unused Qutebrowser configuration files.
+* Fix Bash configuration to use programs from PATH instead of /usr/bin.
+* Use Neovim as Qutebrowser's editor.
 ### Config: Create ~/Downloads
 * This creates a "Downloads" folder and all other user directories in the configured language.
 * The "Downloads" folder always remains "Downloads", regardless of the configured language.

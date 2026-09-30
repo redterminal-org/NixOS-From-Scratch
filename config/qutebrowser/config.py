@@ -68,7 +68,7 @@ c.downloads.open_dispatcher = 'xdg-open'
 # ---------------------------------------------------------------------------
 
 c.editor.command = [
-    'vim',
+    'nvim',
     '-f',
     '{file}',
     '-c',
