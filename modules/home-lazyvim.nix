@@ -4,6 +4,9 @@
   home.file.".config/nvim/lua/config/keymaps.lua".source =
     ../config/nvim/lua/config/keymaps.lua;
 
+  home.file.".config/nvim/lua/plugins/rnvimr.lua".source =
+    ../config/nvim/lua/plugins/rnvimr.lua;
+
   programs.lazyvim.enable = true;
 
   home.file.".config/lazygit/config.yml".text = ''
