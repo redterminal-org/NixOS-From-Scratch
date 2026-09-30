@@ -6,6 +6,7 @@
 * Launch Yazi through a wrapper so the regular `yazi` command uses Kitty.
 * Remove the Hyprland floating rule for Yazi.
 * Open files selected in Yazi as LazyVim buffers and keep explicit arrow-key navigation.
+* Remove Alacritty and use Kitty as the terminal.
 ### Config: fix NixOS configuration
 * Install the Ranger configuration through Home Manager.
 * Remove unused Qutebrowser configuration files.
