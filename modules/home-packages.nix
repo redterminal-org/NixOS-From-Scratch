@@ -8,9 +8,9 @@
     ]))
     oath-toolkit
 
-    alacritty
     kitty
-    ranger
+    yazi
+    ueberzugpp
     qutebrowser
     librewolf
     freetube

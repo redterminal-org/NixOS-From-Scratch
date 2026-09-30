@@ -1,6 +1,16 @@
 *CHANGELOG*
 
 ## 1.2.0
+### LazyVim: use Yazi with Kitty
+* Run Yazi in a normal Kitty window for native image previews.
+* Launch Yazi through a Nix-generated wrapper so the regular `yazi` command uses Kitty without recursively invoking the wrapper.
+* Remove the Hyprland floating rule for Yazi.
+* Open files selected in Yazi as LazyVim buffers and keep explicit arrow-key navigation.
+* Bind Yazi to <Leader>+r in LazyVim's global keymaps so the mapping remains available after LazyVim loads.
+* Set the Yazi column ratio to 2:3:4.
+* Remove Alacritty and use Kitty as the terminal.
+* Add ueberzugpp for Yazi image previews in Wayland/Neovim.
+* Open Yazi in a 90% floating window inside LazyVim.
 ### Config: fix NixOS configuration
 * Install the Ranger configuration through Home Manager.
 * Remove unused Qutebrowser configuration files.

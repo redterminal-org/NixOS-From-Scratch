@@ -8,12 +8,19 @@
     ../config/qutebrowser/base16_gruvbox_dark_hard.py;
 
   # Other programs
-  home.file.".config/alacritty".source = ../config/alacritty;
+  home.file.".config/kitty".source = ../config/kitty;
+  home.file.".config/yazi".source = ../config/yazi;
+  home.file.".local/bin/yazi" = {
+    text = ''
+      #!${pkgs.bash}/bin/bash
+      exec ${pkgs.kitty}/bin/kitty --class yazi ${pkgs.yazi}/bin/yazi "$@"
+    '';
+    executable = true;
+  };
   home.file.".config/eza".source = ../config/eza;
   home.file.".config/starship.toml".source = ../config/starship.toml;
   home.file.".config/todo".source = ../config/todo;
   home.file.".config/Xresources".source = ../config/Xresources;
-  home.file.".config/ranger".source = ../config/ranger;
 
   # Configure MIME handlers for NeoMutt.
   home.file.".mailcap".text = ''
