@@ -8,7 +8,6 @@
     ]))
     oath-toolkit
 
-    alacritty
     kitty
     yazi
     qutebrowser
