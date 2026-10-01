@@ -10,6 +10,12 @@
   # Other programs
   home.file.".config/kitty".source = ../config/kitty;
   home.file.".config/yazi".source = ../config/yazi;
+  home.file.".config/yazi-lazyvim/yazi.toml".source =
+    ../config/yazi-lazyvim/yazi.toml;
+  home.file.".config/yazi-lazyvim/keymap.toml".source =
+    ../config/yazi-lazyvim/keymap.toml;
+  home.file.".config/yazi-lazyvim/theme.toml".source =
+    ../config/yazi-lazyvim/theme.toml;
   home.file.".local/bin/yazi" = {
     text = ''
       #!${pkgs.bash}/bin/bash

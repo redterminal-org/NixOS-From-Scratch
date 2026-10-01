@@ -10,7 +10,6 @@
 
     kitty
     yazi
-    ueberzugpp
     qutebrowser
     librewolf
     freetube
