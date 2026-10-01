@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.3.0
+### Config: changed hypr/hyprland.lua
+* Added keys (SUPER + [H,J,K,L]) to swap windows in specific direction
 ### Config: changed rogallo config and bashrc
 * Changed the Gopher Marker for images to "IMG "
 * Added "export BROWSER=qutebrowser" to bashrc

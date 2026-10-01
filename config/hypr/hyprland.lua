@@ -270,6 +270,12 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
+-- Swap windows with mainMod + H/J/K/L
+hl.bind(mainMod .. " + H", hl.dsp.window.swap({ direction = "left" }))
+hl.bind(mainMod .. " + J", hl.dsp.window.swap({ direction = "down" }))
+hl.bind(mainMod .. " + K", hl.dsp.window.swap({ direction = "up" }))
+hl.bind(mainMod .. " + L", hl.dsp.window.swap({ direction = "right" }))
+
 -- wofi - Password menu
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/wofi/passmenu.sh"))
 -- wofi - One-time password menu
