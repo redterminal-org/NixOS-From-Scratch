@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.3.0
+### LazyGit: fix LazyVim theme and borders
+* Disable LazyVim's automatic LazyGit theme configuration so the custom LazyGit configuration is used in LazyVim
+* Restore rounded LazyGit window borders
 ### LazyGit: moved configuration to config/lazygit
 * Added the LazyGit configuration to `config/lazygit/config.yml`
 * Moved the LazyGit configuration out of `home-lazyvim.nix` and into `home-applications.nix`

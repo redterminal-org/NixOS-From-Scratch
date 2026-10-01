@@ -38,4 +38,4 @@ gui:
     unstagedChangesColor:
       - '#ed333b'
 
-  border: bold
+  border: rounded
