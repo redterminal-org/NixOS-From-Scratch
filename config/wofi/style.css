@@ -5,18 +5,18 @@
 
 window {
   width: 60%;
-  background-color: #1a1b26;
-  border: 1px solid #414868;
+  background-color: #222226;
+  border: 1px solid #5e5c64;
   border-radius: 8px;
 }
 
 #input {
   margin: 8px;
   padding: 5px 8px;
-  color: #a9b1d6;
-  background-color: #24283b;
-  border: 1px solid #414868;
-  border-radius: 4px;
+  color: #ffffff;
+  background-color: #1d1d20;
+  border: 1px solid #5e5c64;
+  border-radius: 6px;
   font-size: 20px;
 }
 
@@ -34,14 +34,14 @@ window {
 
 #entry {
   padding: 2px 6px;
-  color: #a9b1d6;
+  color: #deddda;
   font-size: 18px;
 }
 
 #entry:selected {
-  color: #1a1b26;
-  background-color: #7aa2f7;
-  border-radius: 4px;
+  color: #ffffff;
+  background-color: #3584e4;
+  border-radius: 6px;
 }
 
 #text {
