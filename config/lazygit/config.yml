@@ -1,0 +1,41 @@
+customCommands:
+  - key: "<c-y>"
+    context: "global"
+    description: "Push current branch to all remotes"
+    command: |
+      branch="$(git branch --show-current)" &&
+      for remote in $(git remote); do
+        echo "Pushing $branch to $remote..."
+        git push "$remote" "$branch" || exit 1
+      done
+    loadingText: "Pushing to all remotes..."
+    output: terminal
+
+gui:
+  theme:
+    activeBorderColor:
+      - '#f8e45c'
+      - bold
+    inactiveBorderColor:
+      - '#5e5c64'
+    searchingActiveBorderColor:
+      - '#f8e45c'
+      - bold
+    optionsTextColor:
+      - '#78aeed'
+    selectedLineBgColor:
+      - '#353535'
+    inactiveViewSelectedLineBgColor:
+      - '#2b2b2b'
+    cherryPickedCommitFgColor:
+      - '#62a0ea'
+    cherryPickedCommitBgColor:
+      - '#303030'
+    markedBaseCommitFgColor:
+      - '#f8e45c'
+    markedBaseCommitBgColor:
+      - '#303030'
+    unstagedChangesColor:
+      - '#ed333b'
+
+  border: bold

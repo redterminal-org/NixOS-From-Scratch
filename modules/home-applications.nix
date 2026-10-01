@@ -23,6 +23,7 @@
     '';
     executable = true;
   };
+  home.file.".config/lazygit/config.yml".source = ../config/lazygit/config.yml;
   home.file.".config/eza".source = ../config/eza;
   home.file.".config/starship.toml".source = ../config/starship.toml;
   home.file.".config/todo".source = ../config/todo;

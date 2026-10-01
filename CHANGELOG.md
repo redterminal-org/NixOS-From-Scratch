@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 1.3.0
+### LazyGit: moved configuration to config/lazygit
+* Added the LazyGit configuration to `config/lazygit/config.yml`
+* Moved the LazyGit configuration out of `home-lazyvim.nix` and into `home-applications.nix`
+* Added a yellow active border and dark inactive borders to the LazyGit theme
 ### Config: changed LazyGit in LazyVim
 * Changed the color scheme of LazyGit in LazyVim to stronger colors while keeping the "adwaita-dark" theme
 ### Config: changed hypr/hyprland.lua
