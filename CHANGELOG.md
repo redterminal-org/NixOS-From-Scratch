@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.2.0
+### README: update application list
+* Remove obsolete Alacritty and Ranger entries.
+* Add Yazi to the listed user applications.
 ### LazyVim: integrate Yazi with Kitty
 * Use yazi.nvim for the LazyVim Yazi integration while keeping Yazi in a native Kitty window for direct image previews.
 * Keep Yazi's text and code previews with syntax highlighting when launched from LazyVim.
@@ -9,7 +12,6 @@
 * Remove obsolete Ranger integration, configuration files, and related keymaps.
 * Remove the no-longer-needed ueberzugpp dependency after disabling image previews in LazyVim.
 * Add the Bash shebang and create the configured user Downloads directory.
-
 ### LazyVim: use Yazi with Kitty
 * Run Yazi in a normal Kitty window for native image previews.
 * Launch Yazi through a Nix-generated wrapper so the regular `yazi` command uses Kitty without recursively invoking the wrapper.

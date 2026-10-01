@@ -1,4 +1,4 @@
-# NixOS-From-Scratch v1.0.0 - NixOS 26.05
+# NixOS-From-Scratch v1.2.0 - NixOS 26.05
 
 A modular NixOS configuration built from scratch with a focus on a clean separation between system and user configuration, and a Wayland desktop environment based on Hyprland.
 
@@ -89,9 +89,8 @@ The following settings should be reviewed and adjusted:
 - `pass`: Unix password manager
 - `pass-otp`: One-time password extension for `pass`
 - `oath-toolkit`: Tools for one-time password authentication
-- `alacritty`: GPU-accelerated terminal emulator
 - `kitty`: GPU-accelerated terminal emulator
-- `ranger`: Console file manager
+- `yazi`: Terminal file manager
 - `qutebrowser`: Keyboard-focused web browser
 - `librewolf`: Privacy-focused web browser
 - `freetube`: Privacy-focused YouTube client
