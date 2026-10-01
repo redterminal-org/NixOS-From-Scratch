@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.3.0
+### Config: changed LazyGit in LazyVim
+* Changed the color scheme of LazyGit in LazyVim to stronger colors while keeping the "adwaita-dark" theme
 ### Config: changed hypr/hyprland.lua
 * Added keys (SUPER + [H,J,K,L]) to swap windows in specific direction
 ### Config: changed rogallo config and bashrc
