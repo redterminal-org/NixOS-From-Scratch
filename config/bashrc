@@ -22,8 +22,9 @@ fi
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# Set Standard Editor
+# Set Standard programs
 export EDITOR=nvim
+export BROWSER=qutebrowser
 
 # append to the history file, don't overwrite it
 shopt -s histappend

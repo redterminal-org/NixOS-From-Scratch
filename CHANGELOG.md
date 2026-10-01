@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.3.0
+### Config: changed rogallo config and bashrc
+* Changed the Gopher Marker for images to "IMG "
+* Added "export BROWSER=qutebrowser" to bashrc
 ### Config: use Adwaita-dark styles
 * Update Wofi, Kitty, Yazi, SwayNC, Waybar, and LazyVim to use an Adwaita-dark color palette.
 * Replace the previous Tokyo Night colors with Adwaita colors throughout the desktop and editor configuration.
