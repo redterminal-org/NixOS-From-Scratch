@@ -1,4 +1,4 @@
-# NixOS-From-Scratch v1.2.0 - NixOS 26.05
+# NixOS-From-Scratch - NixOS 26.05
 
 A modular NixOS configuration built from scratch with a focus on a clean separation between system and user configuration, and a Wayland desktop environment based on Hyprland.
 
@@ -54,6 +54,124 @@ The following settings should be reviewed and adjusted:
 - **VM configuration**
   - Review `vm.nix` if the regression VM is used.
   - Adjust memory, CPU, disk size and other VM settings to your requirements.
+
+## NixOS Outputs
+
+The flake provides four NixOS configurations. The standard outputs do not include Ollama, while the `ollama` outputs enable the Ollama service.
+
+### `.#nixos`
+
+Normal NixOS installation without Ollama.
+
+```bash
+sudo nixos-rebuild switch --flake .#nixos
+```
+
+### `.#ollama`
+
+NixOS installation with Ollama enabled.
+
+```bash
+sudo nixos-rebuild switch --flake .#ollama
+```
+
+The LLM used by the LazyVim `gen.nvim` translation integration must be downloaded manually after installation:
+
+```bash
+ollama pull translategemma:12b
+```
+
+LazyVim provides the following translation prompts:
+
+- `Translate to German`
+- `Translate to English`
+
+The selected text is replaced with the generated translation.
+
+### `.#vm`
+
+Interactive regression VM without Ollama.
+
+```bash
+nixos-rebuild build-vm-with-bootloader --flake .#vm
+```
+
+### `.#ollama-vm`
+
+Interactive regression VM with Ollama enabled.
+
+```bash
+nixos-rebuild build-vm-with-bootloader --flake .#ollama-vm
+```
+
+The LLM used by the LazyVim `gen.nvim` translation integration must be downloaded manually in the VM:
+
+```bash
+ollama pull translategemma:12b
+```
+
+LazyVim provides the following translation prompts:
+
+- `Translate to German`
+- `Translate to English`
+
+The selected text is replaced with the generated translation.
+
+## Key Bindings
+
+The following are the most important key bindings configured in `config/hypr/hyprland.lua`.
+
+`SUPER` refers to the `Super`/Windows key. The right `CTRL` key is additionally configured as `Super_R`.
+
+### Applications
+
+| Key | Action |
+| --- | --- |
+| `SUPER + Enter` | Open Kitty terminal |
+| `SUPER + E` | Open Dolphin file manager |
+| `SUPER + D` | Open application launcher |
+| `SUPER + R` | Reload Waybar |
+| `SUPER + S` | Take a screenshot |
+| `SUPER + P` | Open password menu |
+| `SUPER + O` | Open one-time-password menu |
+| `SUPER + M` | Open radio menu |
+| `SUPER + .` | Open emoji picker |
+| `F12` | Toggle dropdown terminal |
+
+### Window Management
+
+| Key | Action |
+| --- | --- |
+| `SUPER + Q` | Close active window |
+| `SUPER + V` | Toggle floating mode |
+| `SUPER + CTRL + Q` | Exit Hyprland |
+| `SUPER + Arrow` | Move focus |
+| `SUPER + H/J/K/L` | Move active window |
+| `SUPER + SHIFT + Arrow` | Resize active window |
+| `SUPER + Left Mouse` | Move active window |
+| `SUPER + Right Mouse` | Resize active window |
+
+### Workspaces
+
+| Key | Action |
+| --- | --- |
+| `SUPER + 1–9` | Switch to workspace 1–9 |
+| `SUPER + 0` | Switch to workspace 10 |
+| `SUPER + SHIFT + 1–9` | Move active window to workspace 1–9 |
+| `SUPER + SHIFT + 0` | Move active window to workspace 10 |
+| `SUPER + Mouse Wheel` | Switch between existing workspaces |
+
+### Media and Hardware
+
+| Key | Action |
+| --- | --- |
+| `XF86MonBrightnessUp` | Increase screen brightness |
+| `XF86MonBrightnessDown` | Decrease screen brightness |
+| `XF86AudioRaiseVolume` | Increase volume |
+| `XF86AudioLowerVolume` | Decrease volume |
+| `XF86AudioMute` | Toggle audio mute |
+
+The complete key binding configuration can be found in `config/hypr/hyprland.lua`.
 
 ## Packaged Software
 
@@ -168,35 +286,91 @@ Private data is not stored in the Nix configuration or Nix store. It can be impo
 4. Enter the SSH destination when prompted:
    - `user@server`
 5. Enter the path to the Secrets directory when prompted.
-6. The script downloads the directory and imports the contained GPG keys, SSH keys, password store and the rogallo Client Certificates, bookmarks, history and so on.
+6. The script downloads the directory and imports the contained GPG keys, SSH keys, password store and Rogallo data.
 
-The Secrets directory on the SSH server must have the following structure:
+#### GPG Keys
 
-    secrets/
-    ├── gnupg/
-    │   ├── public.asc
-    │   └── secret.asc
-    ├── ssh/
-    │   ├── id_*
-    │   └── *.pub
-    ├── password-store/
-    │   └── ...
-    └── rogallo/
-        ├── bookmarks.json
-        ├── client_certificates/
-        ├── command-history.json
-        ├── known_hosts
-        ├── location-history.json
-        └── navigation-history.json
+The `gnupg/public.asc` file contains the exported public GPG keys, while `gnupg/secret.asc` contains the exported private GPG keys. Both files are mandatory.
+
+They can be created from an existing GPG keyring with:
+
+```bash
+gpg --armor --export > public.asc
+gpg --armor --export-secret-keys > secret.asc
+```
+
+The public key file can be distributed freely, while the secret key file contains private key material and must be protected accordingly.
+
+The files must be placed in the `gnupg/` directory of the Secrets directory.
+
+#### SSH, Password Store and Rogallo Data
+
+The `ssh/`, `password-store/` and `rogallo/` directories are copied to the corresponding locations in the user's home directory. Their contents are generally optional and can contain only the files that are actually needed.
+
+The `ssh/` directory can contain multiple SSH key pairs as well as other SSH configuration files such as `known_hosts` or `authorized_keys`:
+
+```text
+ssh/
+├── id_ed25519
+├── id_ed25519.pub
+├── id_work
+├── id_work.pub
+├── authorized_keys
+└── known_hosts
+```
+
+The `password-store/` directory contains the initial passwords for the password store. It can also contain One-Time-Password secrets in `password-store/otp/`. These OTP secrets use the following format:
+
+```text
+otpauth://totp/<name>?secret=<secret>&issuer=<issuer>
+```
+
+For example:
+
+```text
+password-store/
+├── example.gpg
+├── another-password.gpg
+└── otp/
+    └── example
+```
+
+The `rogallo/` directory does not have to contain all available Rogallo data. For example, it can contain only the client certificates:
+
+```text
+rogallo/
+└── client_certificates/
+```
+
+Other files such as bookmarks, command history or navigation history can be omitted if they are not needed.
+
+The Secrets directory on the SSH server must therefore contain at least the following GPG files:
+
+```text
+secrets/
+├── gnupg/
+│   ├── public.asc
+│   └── secret.asc
+├── ssh/
+│   └── ...
+├── password-store/
+│   └── ...
+└── rogallo/
+    └── ...
+```
+
+Only `gnupg/public.asc` and `gnupg/secret.asc` are mandatory. The `ssh/`, `password-store/` and `rogallo/` directories can contain any supported data or can be empty if that particular data is not required.
 
 The directory name itself is arbitrary. Its path is entered during the import process.
 
 The imported data is copied to:
 
-    ~/.gnupg/
-    ~/.ssh/
-    ~/.password-store/
-    ~/.local/share/rogallo/
+```text
+~/.gnupg/
+~/.ssh/
+~/.password-store/
+~/.local/share/rogallo/
+```
 
 The GPG keys are imported into the user's local GPG keyring.
 

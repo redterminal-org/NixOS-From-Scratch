@@ -1,6 +1,11 @@
 *CHANGELOG*
 
 ## 1.5.0
+### README.md: updated
+* Remove the version `v1.2.0` from the README title.
+* Document the four NixOS outputs, including the manual `translategemma:12b` download required for the Ollama outputs.
+* Add a key bindings section documenting the most important Hyprland shortcuts.
+* Expand the Secrets import documentation for GPG keys, SSH keys, password-store and OTP secrets, and optional Rogallo data.
 ### LazyVim: add gen.nvim TranslateGemma prompts
 * Add gen.nvim to LazyVim with the translategemma:12b model and local Ollama endpoint.
 * Add the prompts "Translate to German" and "Translate to English" for replacing selected text with the translation.
