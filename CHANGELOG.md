@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 1.5.0
+### LazyVim: configure Ollama model memory handling
+* Keep the CodeCompanion qwen3-coder:30b model loaded indefinitely and unload translategemma:12b before coding requests.
+* Unload qwen3-coder:30b before gen.nvim translation requests and unload translategemma:12b after each translation.
+* Unload qwen3-coder:30b automatically when Neovim exits.
 ### LazyVim: add CodeCompanion with Qwen3-Coder
 * Add CodeCompanion to LazyVim with the local Ollama model `qwen3-coder:30b` for coding assistance.
 * Add `<leader>cc` for the CodeCompanion chat and `<leader>ci` for inline code assistance.
