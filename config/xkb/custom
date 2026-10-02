@@ -1,8 +1,8 @@
 partial modifier_keys
 
-xkb_symbols "print_mod4" {
-  replace key <PRSC> {
-    [ Super_L ]
+xkb_symbols "rctrl_mod4" {
+  replace key <RCTL> {
+    [ Super_R ]
   };
 
   modifier_map Mod4 {

@@ -25,7 +25,7 @@
     ! include %S/evdev
 
     ! option = symbols
-    custom:print_mod4 = +custom(print_mod4)
+    custom:rctrl_mod4 = +custom(rctrl_mod4)
   '';
 
   home.file.".config/kdeglobals".text = ''

@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 1.4.0
+### Config: map right CTRL to right SUPER
+* Map the right CTRL key to Super_R so it acts as the second SUPER key.
+* Restore Print (PrtSc) to its normal Print function.
+* Update custom XKB symbols and evdev rules to use rctrl_mod4 instead of print_mod4.
 ### Config: use Tokyo Night theme for Kitty
 * Apply the Tokyo Night Night color scheme to Kitty so its background matches the general background used by Yazi and LazyVim.
 * Set Kitty's foreground, cursor, selection, ANSI colors, tabs, and window borders to the Tokyo Night Night palette.
