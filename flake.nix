@@ -44,6 +44,20 @@
         };
       };
     in
+    let
+      nixosModules = [
+        stylix.nixosModules.stylix
+        ./all.nix
+        home-manager.nixosModules.home-manager
+        homeManagerModule
+      ];
+
+      mkNixos = hardwareModule: extraModules:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = nixosModules ++ [ hardwareModule ] ++ extraModules;
+        };
+    in
     {
       /*
         ================================================================
@@ -52,37 +66,30 @@
       */
 
       nixosConfigurations.nixos =
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          modules = [
-            stylix.nixosModules.stylix
-            ./all.nix
-            ./real.nix
-
-            home-manager.nixosModules.home-manager
-            homeManagerModule
-          ];
-        };
+        mkNixos ./real.nix [ ];
 
       /*
+        Optional NixOS installation with Ollama
         ================================================================
+      */
+
+      nixosConfigurations.ollama =
+        mkNixos ./real.nix [ ./modules/ollama.nix ];
+
+      /*
         Interactive regression VM
         ================================================================
       */
 
       nixosConfigurations.vm =
-        nixpkgs.lib.nixosSystem {
-          inherit system;
+        mkNixos ./vm.nix [ ];
 
-          modules = [
-            stylix.nixosModules.stylix
-            ./all.nix
-            ./vm.nix
+      /*
+        Interactive regression VM with Ollama
+        ================================================================
+      */
 
-            home-manager.nixosModules.home-manager
-            homeManagerModule
-          ];
-        };
+      nixosConfigurations.ollama-vm =
+        mkNixos ./vm.nix [ ./modules/ollama.nix ];
     };
 }
