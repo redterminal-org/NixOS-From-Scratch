@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.5.0
+### LazyVim: add CodeCompanion with Qwen3-Coder
+* Add CodeCompanion to LazyVim with the local Ollama model `qwen3-coder:30b` for coding assistance.
+* Add `<leader>cc` for the CodeCompanion chat and `<leader>ci` for inline code assistance.
 ### README.md: updated
 * Remove the version `v1.2.0` from the README title.
 * Document the four NixOS outputs, including the manual `translategemma:12b` download required for the Ollama outputs.

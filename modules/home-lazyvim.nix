@@ -9,6 +9,8 @@
     ../config/nvim/lua/plugins/colorscheme.lua;
   home.file.".config/nvim/lua/plugins/gen.lua".source =
     ../config/nvim/lua/plugins/gen.lua;
+  home.file.".config/nvim/lua/plugins/codecompanion.lua".source =
+    ../config/nvim/lua/plugins/codecompanion.lua;
 
   programs.lazyvim = {
     enable = true;
