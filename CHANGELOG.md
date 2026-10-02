@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.6.0
+### Hyprland: disable touchpad
+* Detect touchpads through udev and disable them through Hyprland without relying on hardware-specific device names.
 ### BUGFIX: Repo contains hardware-configuration.nix again
 ### BUGFIX: fix printing module
 * Pass `pkgs` to the printing module so the `brlaser` driver can be referenced.

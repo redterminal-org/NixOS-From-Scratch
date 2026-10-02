@@ -235,10 +235,56 @@ hl.config({
 --- DEVICES ---
 ---------------------
 
-hl.device({
-  name = "synps/2-synaptics-touchpad",
-  enabled = false,
-})
+-- Disable every touchpad regardless of its hardware-specific name.
+-- udev identifies touchpads reliably, while Hyprland needs the normalized device name.
+local function disable_touchpads()
+  local events = io.popen("printf '%s\\n' /sys/class/input/event*")
+
+  if events == nil then
+    return
+  end
+
+  for event in events:lines() do
+    local properties = io.popen(
+      "udevadm info --query=property --path=" .. event .. " 2>/dev/null"
+    )
+
+    if properties ~= nil then
+      local is_touchpad = false
+
+      for line in properties:lines() do
+        if line == "ID_INPUT_TOUCHPAD=1" then
+          is_touchpad = true
+          break
+        end
+      end
+
+      properties:close()
+
+      if is_touchpad then
+        local name_file = io.open(event .. "/device/name", "r")
+
+        if name_file ~= nil then
+          local name = name_file:read("*l")
+          name_file:close()
+
+          if name ~= nil then
+            name = name:lower():gsub("[ ,]", "-")
+
+            hl.device({
+              name = name,
+              enabled = false,
+            })
+          end
+        end
+      end
+    end
+  end
+
+  events:close()
+end
+
+disable_touchpads()
 
 hl.device({
   name = "epic-mouse-v1",
@@ -282,7 +328,7 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/wofi/passmenu.sh"))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("~/.config/wofi/otpmenu.sh"))
 -- wofi - Open the radio menu.
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("~/.config/wofi/radio.sh"))
--- rofmoji - Emoji picker
+-- rofimoji - Emoji picker
 hl.bind(
   mainMod .. " + period", hl.dsp.exec_cmd("rofimoji --selector wofi --action clipboard"))
 
