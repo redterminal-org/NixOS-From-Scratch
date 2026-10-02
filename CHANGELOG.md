@@ -1,5 +1,10 @@
 *CHANGELOG*
 
+## 1.6.0
+### Merge remote-tracking branch 'refs/remotes/origin/main'
+### Config: enable printing
+* Enable the CUPS printing service.
+
 ## 1.5.0
 ### Config: removed hardware-configuration.nix from repo and put it in .gitignore
 ### BUGFIX: improve CodeCompanion tool calling with Qwen3-Coder
