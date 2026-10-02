@@ -1,5 +1,9 @@
 *CHANGELOG*
 
+## 1.5.0
+### Hardware: changed hardware-configuration.nix
+* Changed hardware-configuration.nix to my Tuxedo Laptop Hardware
+
 ## 1.4.0
 ### Config: add optional Ollama outputs
 * Add the `.#ollama` output to install Ollama and run its daemon automatically on the real system.
