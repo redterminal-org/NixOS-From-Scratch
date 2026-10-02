@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.6.0
+### BUGFIX: fix printing module
+* Pass `pkgs` to the printing module so the `brlaser` driver can be referenced.
 ### Merge remote-tracking branch 'refs/remotes/origin/main'
 ### Config: enable printing
 * Enable the CUPS printing service.
