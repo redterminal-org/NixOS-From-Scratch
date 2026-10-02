@@ -38,11 +38,12 @@ The following settings should be reviewed and adjusted:
   - Update `home.nix` with the corresponding `home.username` and `home.homeDirectory`.
 
 - **Hardware configuration**
-  - Replace `hardware-configuration.nix` with the hardware configuration generated for your machine.
-  - Review `real.nix` and adjust the boot configuration if necessary.
+  - Add a generated hardware configuration as `hardware/<machine>.nix`.
+  - Add a matching host module as `hosts/<machine>.nix`.
+  - Review `real.nix` and adjust shared boot configuration if necessary.
 
 - **Hostname**
-  - Change `networking.hostName` in `real.nix`.
+  - Set `networking.hostName` in the matching `hosts/<machine>.nix` module.
 
 - **Packages and applications**
   - Adjust `modules/all-packages.nix` for system-wide packages.
@@ -57,22 +58,34 @@ The following settings should be reviewed and adjusted:
 
 ## NixOS Outputs
 
-The flake provides four NixOS configurations. The standard outputs do not include Ollama, while the `ollama` outputs enable the Ollama service.
+The flake provides one configuration per physical machine and two regression VM configurations. Physical machines share the same system configuration, while their hardware and hostnames are kept in separate host modules.
 
-### `.#nixos`
+### `.#sleepy`
 
-Normal NixOS installation without Ollama.
+NixOS installation for the current AMD/Tuxedo hardware with hostname `sleepy`.
 
 ```bash
-sudo nixos-rebuild switch --flake .#nixos
+sudo nixos-rebuild switch --flake .#sleepy
 ```
 
-### `.#ollama`
+### `.#sneezy`
 
-NixOS installation with Ollama enabled.
+NixOS installation for the previous Intel/Tuxedo hardware with hostname `sneezy`.
 
 ```bash
-sudo nixos-rebuild switch --flake .#ollama
+sudo nixos-rebuild switch --flake .#sneezy
+```
+
+Both physical configurations provide the same optional Ollama specialisation. It can be activated with:
+
+```bash
+sudo nixos-rebuild switch --flake .#sleepy --specialisation ollama
+```
+
+or:
+
+```bash
+sudo nixos-rebuild switch --flake .#sneezy --specialisation ollama
 ```
 
 The LLM used by the LazyVim `gen.nvim` translation integration must be downloaded manually after installation:

@@ -52,29 +52,23 @@
         homeManagerModule
       ];
 
-      mkNixos = hardwareModule: extraModules:
+      mkNixos = hostModule: extraModules:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = nixosModules ++ [ hardwareModule ] ++ extraModules;
+          modules = nixosModules ++ [ hostModule ] ++ extraModules;
         };
     in
     {
       /*
-        ================================================================
-        Real NixOS installation
-        ================================================================
-      */
-
-      nixosConfigurations.nixos =
-        mkNixos ./real.nix [ ];
-
-      /*
-        Optional NixOS installation with Ollama
+        Real NixOS installations
         ================================================================
       */
 
-      nixosConfigurations.ollama =
-        mkNixos ./real.nix [ ./modules/ollama.nix ];
+      nixosConfigurations.sleepy =
+        mkNixos ./hosts/sleepy.nix [ ];
+
+      nixosConfigurations.sneezy =
+        mkNixos ./hosts/sneezy.nix [ ];
 
       /*
         Interactive regression VM

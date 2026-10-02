@@ -1,6 +1,10 @@
 *CHANGELOG*
 
-## 2.0.0 - Multi-Machine Setup
+## 2.0.0 - Multi-Machine
+### Config: add multi-machine hosts
+* Add the `.#sleepy` and `.#sneezy` outputs with separate hardware configurations and hostnames.
+* Move machine-specific hardware configurations into `hardware/` so additional machines can be added without duplicating the shared system configuration.
+* Provide Ollama as a shared physical-system specialisation instead of separate Ollama outputs for each machine.Setup
 ### CHANGELOG.md: updated
 
 ## 1.6.0
@@ -13,6 +17,10 @@
 ### Config: enable printing
 * Enable the CUPS printing service.
 
+### Config: add multi-machine hosts
+* Add the `.#sleepy` and `.#sneezy` outputs with separate hardware configurations and hostnames.
+* Move machine-specific hardware configurations into `hardware/` so additional machines can be added without duplicating the shared system configuration.
+* Provide Ollama as a shared physical-system specialisation instead of separate Ollama outputs for each machine.
 ## 1.5.0
 ### Config: removed hardware-configuration.nix from repo and put it in .gitignore
 ### BUGFIX: improve CodeCompanion tool calling with Qwen3-Coder
