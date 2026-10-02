@@ -6,6 +6,6 @@ xkb_symbols "rctrl_mod4" {
   };
 
   modifier_map Mod4 {
-    <PRSC>
+    <RCTL>
   };
 };

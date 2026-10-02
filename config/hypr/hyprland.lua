@@ -203,7 +203,7 @@ hl.config({
     kb_layout = "de",
     kb_variant = "",
     kb_model = "",
-    kb_options = "custom:print_mod4",
+    kb_options = "custom:rctrl_mod4",
     kb_rules = "",
 
     follow_mouse = 1,

@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.4.0
+### BUGFIX: activate right CTRL as right SUPER
+* Apply the custom rctrl_mod4 XKB option in Hyprland so the right CTRL key is actually mapped to Super_R.
+* Correct the XKB modifier map to assign Mod4 to the right CTRL key.
 ### Config: map right CTRL to right SUPER
 * Map the right CTRL key to Super_R so it acts as the second SUPER key.
 * Restore Print (PrtSc) to its normal Print function.
