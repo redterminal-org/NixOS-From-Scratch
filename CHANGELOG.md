@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 1.4.0
+### Config: add optional Ollama outputs
+* Add the `.#ollama` output to install Ollama and run its daemon automatically on the real system.
+* Add the `.#ollama-vm` output to install Ollama and run its daemon automatically in the test VM.
+* Keep the existing `.#nixos` and `.#vm` outputs unchanged without Ollama.
 ### BUGFIX: activate right CTRL as right SUPER
 * Apply the custom rctrl_mod4 XKB option in Hyprland so the right CTRL key is actually mapped to Super_R.
 * Correct the XKB modifier map to assign Mod4 to the right CTRL key.
