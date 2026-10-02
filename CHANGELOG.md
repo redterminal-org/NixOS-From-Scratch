@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.5.0
+### BUGFIX: initialize CodeCompanion in LazyVim
+* Call CodeCompanion's setup function with the configured options so the CodeCompanionChat and CodeCompanion commands are registered.
 ### LazyVim: configure Ollama model memory handling
 * Keep the CodeCompanion qwen3-coder:30b model loaded indefinitely and unload translategemma:12b before coding requests.
 * Unload qwen3-coder:30b before gen.nvim translation requests and unload translategemma:12b after each translation.
