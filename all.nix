@@ -11,6 +11,7 @@
     ./modules/all-packages.nix
     ./modules/all-fonts.nix
     ./modules/all-nix.nix
+    ./modules/all-printing.nix
   ];
 
   stylix = {

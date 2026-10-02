@@ -1,5 +1,9 @@
 *CHANGELOG*
 
+## 1.6.0
+### Config: enable printing
+* Enable the CUPS printing service.
+
 ## 1.5.0
 ### BUGFIX: improve CodeCompanion tool calling with Qwen3-Coder
 * Configure Qwen3-Coder with a 16K context for more reliable CodeCompanion tool calls.
