@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 1.5.0
+### BUGFIX: use a valid Ollama keep-alive duration
+* Set the CodeCompanion Ollama keep-alive to `-1m` so Ollama accepts it as a valid duration and keeps qwen3-coder:30b loaded indefinitely.
 ### BUGFIX: initialize CodeCompanion in LazyVim
 * Call CodeCompanion's setup function with the configured options so the CodeCompanionChat and CodeCompanion commands are registered.
 ### LazyVim: configure Ollama model memory handling

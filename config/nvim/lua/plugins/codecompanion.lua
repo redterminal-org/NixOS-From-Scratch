@@ -17,7 +17,7 @@ return {
                 end,
               },
               schema = {
-                keep_alive = { default = "-1" },
+                keep_alive = { default = "-1m" },
               },
             })
           end,
