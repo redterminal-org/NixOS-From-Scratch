@@ -10,9 +10,15 @@
     };
 
     lazyvim.url = "github:pfassina/lazyvim-nix";
+
+    stylix = {
+      url = "github:nix-community/stylix/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, lazyvim, ... }:
+  outputs = { self, nixpkgs, home-manager, lazyvim, stylix, ... }:
     let
       system = "x86_64-linux";
 
@@ -50,6 +56,7 @@
           inherit system;
 
           modules = [
+            stylix.nixosModules.stylix
             ./all.nix
             ./real.nix
 
@@ -69,6 +76,7 @@
           inherit system;
 
           modules = [
+            stylix.nixosModules.stylix
             ./all.nix
             ./vm.nix
 

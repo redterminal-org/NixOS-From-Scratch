@@ -1,14 +1,14 @@
-@define-color bg    #222226;
-@define-color fg    #deddda;
-@define-color blk   #2e2e32;
-@define-color red   #ed333b;
-@define-color grn   #33d17a;
-@define-color ylw   #f6d32d;
-@define-color blu   #3584e4;
-@define-color mag   #9141ac;
-@define-color cyn   #2190a4;
-@define-color brblk #5e5c64;
-@define-color white #ffffff;
+@define-color bg    #1a1b26;
+@define-color fg    #a9b1d6;
+@define-color blk   #24283b;
+@define-color red   #f7768e;
+@define-color grn   #9ece6a;
+@define-color ylw   #e0af68;
+@define-color blu   #7aa2f7;
+@define-color mag   #bb9af7;
+@define-color cyn   #7dcfff;
+@define-color brblk #414868;
+@define-color white #c0caf5;
 
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
@@ -23,28 +23,27 @@ window#waybar {
 
 #workspaces button {
     padding: 0 6px;
-    color: #7bdff4;
+    color: @cyn;
     background: transparent;
     border-bottom: 3px solid @bg;
 }
 
 #workspaces button.active {
-    color: #ffffff;
-    border-bottom: 3px solid @blu;
+    color: @cyn;
+    border-bottom: 3px solid @mag;
 }
 
 #workspaces button.empty {
-    color: #9a9996;
+    color: @white;
 }
 
 #workspaces button.empty.active {
-    color: #ffffff;
-    border-bottom: 3px solid @blu;
+    color: @cyn;
+    border-bottom: 3px solid @mag;
 }
 
 #workspaces button.urgent {
     background-color: @red;
-    color: #ffffff;
 }
 
 button:hover {
@@ -69,38 +68,37 @@ button:hover {
 }
 
 #custom-date {
-    color: #7bdff4;
+    color: @cyn;
     border-bottom: 4px solid @cyn;
 }
 
 #battery {
-    color: #fba7ff;
+    color: @mag;
     border-bottom: 4px solid @mag;
 }
 
 #disk {
-    color: #ffc057;
+    color: @ylw;
     border-bottom: 4px solid @ylw;
 }
 
 #memory {
-    color: #fba7ff;
+    color: @mag;
     border-bottom: 4px solid @mag;
 }
 
 #cpu {
-    color: #8de698;
+    color: @grn;
     border-bottom: 4px solid @grn;
 }
 
 #network {
-    color: #81d0ff;
+    color: @blu;
     border-bottom: 4px solid @blu;
 }
 
 #network.disconnected {
     background-color: @red;
-    color: #ffffff;
 }
 
 #tray {
@@ -114,11 +112,11 @@ button:hover {
 
 #pulseaudio {
     padding: 0 8px;
-    color: #7bdff4;
+    color: @cyn;
     border-bottom: 4px solid @cyn;
 }
 
 #pulseaudio.muted {
-    color: #ff938c;
+    color: @red;
     border-bottom: 4px solid @red;
 }

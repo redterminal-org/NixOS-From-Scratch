@@ -1,5 +1,11 @@
 *CHANGELOG*
 
+## 1.4.0
+### Config: restore Tokyo Night theme
+* Restore the Tokyo Night theme for Wofi, SwayNC, Waybar, LazyVim, Yazi, and LazyGit while keeping LazyGit's selected-window border yellow.
+* Apply the Tokyo Night color scheme to GTK and Qt applications.
+* Keep Kitty and Qutebrowser themes unchanged.
+
 ## 1.3.0
 ### BUGFIX: use LazyGit configuration in LazyVim
 * Remove LazyVim's automatic LazyGit theme configuration so the custom LazyGit configuration is used in LazyVim

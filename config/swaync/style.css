@@ -1,4 +1,4 @@
-/* Adwaita-dark */
+/* Tokyo Night Dark */
 
 * {
   font-family: "JetBrainsMono Nerd Font Mono";
@@ -10,8 +10,8 @@
 }
 
 .notification {
-  background: #2e2e32;
-  border: 1px solid #5e5c64;
+  background: #1a1b26;
+  border: 1px solid #3b4261;
   border-radius: 8px;
   margin: 4px 8px;
   padding: 0;
@@ -22,29 +22,29 @@
 }
 
 .summary {
-  color: #ffffff;
+  color: #c0caf5;
   font-weight: bold;
 }
 
 .body {
-  color: #deddda;
+  color: #a9b1d6;
 }
 
 .time {
-  color: #9a9996;
+  color: #565f89;
   font-size: 17px;
 }
 
 .close-button {
   background: transparent;
-  color: #9a9996;
+  color: #565f89;
   border-radius: 50%;
   padding: 4px;
 }
 
 .close-button:hover {
-  background: #36363a;
-  color: #81d0ff;
+  background: #24283b;
+  color: #7aa2f7;
 }
 
 /* Notification icons */
@@ -56,9 +56,10 @@
 /* Critical notifications */
 
 .notification.critical {
-  border-color: #c01c28;
+  border-color: #f7768e;
 }
 
 .notification.critical .summary {
-  color: #ff938c;
+  color: #f7768e;
 }
+

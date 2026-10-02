@@ -33,18 +33,9 @@
     ColorScheme=qt6ct
   '';
 
-  qt = {
-    enable = true;
-
-    platformTheme.name = "qtct";
-    style.name = "adwaita-dark";
-
-    qt6ctSettings = {
-      Appearance = {
-        style = "adwaita-dark";
-      };
-    };
-  };
+  stylix.targets.gtk.enable = true;
+  stylix.targets.qt.enable = true;
+  stylix.targets.kitty.enable = false;
 
   home.file.".config/user-dirs.conf".text = ''
     enabled=True

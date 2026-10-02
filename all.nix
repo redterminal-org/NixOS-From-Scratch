@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -12,6 +12,13 @@
     ./modules/all-fonts.nix
     ./modules/all-nix.nix
   ];
+
+  stylix = {
+    enable = true;
+    autoEnable = false;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+  };
 
   system.stateVersion = "26.05";
 }
