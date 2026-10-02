@@ -1,14 +1,17 @@
 *CHANGELOG*
 
 ## 1.4.0
+### Config: use Tokyo Night theme for Kitty
+* Apply the Tokyo Night Night color scheme to Kitty so its background matches the general background used by Yazi and LazyVim.
+* Set Kitty's foreground, cursor, selection, ANSI colors, tabs, and window borders to the Tokyo Night Night palette.
+* Remove the temporary LazyGit background wrapper used by the previous LazyGit background fix.
+### BUGFIX: fix LazyGit background and LazyVim Yazi layout
+* Configure LazyGit to use the Tokyo Night background without changing the Kitty theme.
+* Adjust the Yazi floating window in LazyVim to leave the bottom line visible for LazyVim's info line.
 ### Config: restore Tokyo Night theme
 * Restore the Tokyo Night theme for Wofi, SwayNC, Waybar, LazyVim, Yazi, and LazyGit while keeping LazyGit's selected-window border yellow.
 * Apply the Tokyo Night color scheme to GTK and Qt applications.
 * Keep Kitty and Qutebrowser themes unchanged.
-
-### BUGFIX: fix LazyGit background and LazyVim Yazi layout
-* Configure LazyGit to use the Tokyo Night background without changing the Kitty theme.
-* Adjust the Yazi floating window in LazyVim to leave the bottom line visible for LazyVim's info line.
 
 ## 1.3.0
 ### BUGFIX: use LazyGit configuration in LazyVim
