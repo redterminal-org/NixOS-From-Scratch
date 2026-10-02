@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.5.0
+### LazyVim: add gen.nvim TranslateGemma prompts
+* Add gen.nvim to LazyVim with the translategemma:12b model and local Ollama endpoint.
+* Add the prompts "Translate to German" and "Translate to English" for replacing selected text with the translation.
 ### Hardware: changed hardware-configuration.nix
 * Changed hardware-configuration.nix to my Tuxedo Laptop Hardware
 

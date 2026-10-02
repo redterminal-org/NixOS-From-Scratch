@@ -7,6 +7,8 @@
   home.file.".config/nvim/lua/plugins/lsp.lua".source = ../config/nvim/lua/plugins/lsp.lua;
   home.file.".config/nvim/lua/plugins/colorscheme.lua".source =
     ../config/nvim/lua/plugins/colorscheme.lua;
+  home.file.".config/nvim/lua/plugins/gen.lua".source =
+    ../config/nvim/lua/plugins/gen.lua;
 
   programs.lazyvim = {
     enable = true;
