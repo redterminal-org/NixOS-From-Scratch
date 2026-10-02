@@ -1,5 +1,8 @@
 *CHANGELOG*
 
+## 2.0.0 - Multi-Machine Setup
+### CHANGELOG.md: updated
+
 ## 1.6.0
 ### Hyprland: disable touchpad
 * Detect touchpads through udev and disable them through Hyprland without relying on hardware-specific device names.
