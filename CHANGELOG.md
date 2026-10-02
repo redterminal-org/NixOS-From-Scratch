@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 1.5.0
+### Config: removed hardware-configuration.nix from repo and put it in .gitignore
 ### BUGFIX: improve CodeCompanion tool calling with Qwen3-Coder
 * Configure Qwen3-Coder with a 16K context for more reliable CodeCompanion tool calls.
 * Expose CodeCompanion's built-in tools directly instead of the agent/files groups and keep tool execution in Ask mode so changes and commands require user approval.

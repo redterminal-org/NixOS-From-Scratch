@@ -6,3 +6,5 @@ flake.lock
 chatgpt-*
 nixos-test-*
 result
+
+hardware-configuration.nix
