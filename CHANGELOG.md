@@ -6,6 +6,10 @@
 * Apply the Tokyo Night color scheme to GTK and Qt applications.
 * Keep Kitty and Qutebrowser themes unchanged.
 
+### BUGFIX: fix LazyGit background and LazyVim Yazi layout
+* Configure LazyGit to use the Tokyo Night background without changing the Kitty theme.
+* Adjust the Yazi floating window in LazyVim to leave the bottom line visible for LazyVim's info line.
+
 ## 1.3.0
 ### BUGFIX: use LazyGit configuration in LazyVim
 * Remove LazyVim's automatic LazyGit theme configuration so the custom LazyGit configuration is used in LazyVim

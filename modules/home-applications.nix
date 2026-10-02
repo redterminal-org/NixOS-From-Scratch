@@ -23,6 +23,17 @@
     '';
     executable = true;
   };
+  home.file.".local/bin/lazygit" = {
+    text = ''
+      #!${pkgs.bash}/bin/bash
+
+      printf '\033]11;#1a1b26\007'
+      trap 'printf "\033]11;#1d1d20\007"' EXIT
+
+      ${pkgs.lazygit}/bin/lazygit "$@"
+    '';
+    executable = true;
+  };
   home.file.".config/lazygit/config.yml".source = ../config/lazygit/config.yml;
   home.file.".config/eza".source = ../config/eza;
   home.file.".config/starship.toml".source = ../config/starship.toml;
