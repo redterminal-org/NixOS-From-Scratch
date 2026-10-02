@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 1.5.0
+### BUGFIX: improve CodeCompanion tool calling with Qwen3-Coder
+* Configure Qwen3-Coder with a 16K context for more reliable CodeCompanion tool calls.
+* Expose CodeCompanion's built-in tools directly instead of the agent/files groups and keep tool execution in Ask mode so changes and commands require user approval.
 ### BUGFIX: use a valid Ollama keep-alive duration
 * Set the CodeCompanion Ollama keep-alive to `-1m` so Ollama accepts it as a valid duration and keeps qwen3-coder:30b loaded indefinitely.
 ### BUGFIX: initialize CodeCompanion in LazyVim

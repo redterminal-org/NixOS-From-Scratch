@@ -17,6 +17,7 @@ return {
                 end,
               },
               schema = {
+                num_ctx = { default = 16384 },
                 keep_alive = { default = "-1m" },
               },
             })
@@ -24,7 +25,23 @@ return {
         },
       },
       interactions = {
-        chat = { adapter = { name = "ollama", model = "qwen3-coder:30b" } },
+        chat = {
+          adapter = { name = "ollama", model = "qwen3-coder:30b" },
+          tools = {
+            opts = {
+              default_tools = {
+                "read_file",
+                "grep_search",
+                "file_search",
+                "get_diagnostics",
+                "get_changed_files",
+                "insert_edit_into_file",
+                "run_command",
+              },
+              approval_mode = "ask",
+            },
+          },
+        },
         inline = { adapter = { name = "ollama", model = "qwen3-coder:30b" } },
       },
     },
