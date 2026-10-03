@@ -1,5 +1,8 @@
 *CHANGELOG*
 
+## 2.1.0
+### CHANGELOG.md: updated
+
 ## 2.0.0 - Multi-Machine Setup
 ### BUGFIX: restore Ollama default on sleepy
 * Set the Ollama specialisation as the default systemd-boot entry on `sleepy`.
