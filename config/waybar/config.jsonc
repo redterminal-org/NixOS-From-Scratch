@@ -22,6 +22,8 @@
         "custom/sep",
         "cpu",
         "custom/sep",
+        "custom/temp",
+        "custom/sep",
         "memory",
         "custom/sep",
         "disk",
@@ -58,6 +60,11 @@
     },
     "cpu": {
         "format": "CPU: {usage}%",
+        "tooltip": false
+    },
+    "custom/temp": {
+        "exec": "cpu=''; gpu=''; for zone in /sys/class/thermal/thermal_zone*; do [ -r \"$zone/temp\" ] || continue; type=$(cat \"$zone/type\" 2>/dev/null); case \"$type\" in x86_pkg_temp|cpu_thermal|soc_thermal|cpu-thermal) value=$(cat \"$zone/temp\" 2>/dev/null); [ -n \"$value\" ] && cpu=$((value / 1000)) && break;; esac; done; if [ -z \"$cpu\" ]; then for hw in /sys/class/hwmon/hwmon*; do [ -r \"$hw/name\" ] || continue; name=$(cat \"$hw/name\" 2>/dev/null); case \"$name\" in coretemp|k10temp|zenpower|cpu_thermal) for input in \"$hw\"/temp*_input; do [ -r \"$input\" ] || continue; value=$(cat \"$input\" 2>/dev/null); [ -n \"$value\" ] && cpu=$((value / 1000)) && break 2; done;; esac; done; fi; gpu_fallback=''; gpu=''; for hw in /sys/class/hwmon/hwmon*; do [ -r \"$hw/name\" ] || continue; name=$(cat \"$hw/name\" 2>/dev/null); case \"$name\" in amdgpu|i915|nouveau|nvidia) device=$(readlink -f \"$hw/device\" 2>/dev/null); boot=''; [ -r \"$device/boot_display\" ] && boot=$(cat \"$device/boot_display\" 2>/dev/null); [ -z \"$boot\" ] && [ -r \"$device/boot_vga\" ] && boot=$(cat \"$device/boot_vga\" 2>/dev/null); for input in \"$hw\"/temp*_input; do [ -r \"$input\" ] || continue; value=$(cat \"$input\" 2>/dev/null); [ -z \"$value\" ] && continue; if [ \"$boot\" = 1 ]; then gpu=$((value / 1000)); break 2; fi; [ -z \"$gpu_fallback\" ] && gpu=$((value / 1000)); done;; esac; done; [ -z \"$gpu\" ] && gpu=$gpu_fallback; if [ -n \"$cpu\" ]; then printf 'Temp: %s°C' \"$cpu\"; else printf 'Temp: --°C'; fi; [ -n \"$gpu\" ] && printf '/%s°C' \"$gpu\"; exit 0",
+        "interval": 5,
         "tooltip": false
     },
     "memory": {

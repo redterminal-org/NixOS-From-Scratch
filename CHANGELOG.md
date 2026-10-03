@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 2.1.0
+### Config: add Waybar temperature sensor
+* Add a hardware-independent Waybar temperature module that reads CPU temperatures from available Linux thermal and hwmon sensors.
+* Add a GPU temperature only when a supported GPU sensor is available, preferring the active display GPU and falling back to another available GPU sensor when needed.
+* Place the temperature display directly after CPU usage and style it with a Tokyo Night color.
 ### Config: fix Waybar battery separator
 * Keep the battery separators outside the battery module so they are not affected by the battery module styling.
 * Show the right battery separator only when a battery power supply exists, leaving a single separator on systems without a battery.
