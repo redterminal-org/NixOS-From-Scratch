@@ -28,7 +28,6 @@
 
     # Gadgets
     todo-txt-cli
-    starship
     rofimoji
   ];
 

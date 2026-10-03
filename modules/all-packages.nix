@@ -18,6 +18,8 @@
     brightnessctl
     jq
     wev
+    gnupg
+    starship
 
     # Hyprland tools
     wofi
