@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.1.0
+### Config: restore qutebrowser tabs
+* Enable automatic qutebrowser session saving so open tabs are restored after reopening.
+* Keep the existing qutebrowser session behavior while saving the current tabs automatically on quit.
 ### CHANGELOG.md: updated
 
 ## 2.0.0 - Multi-Machine Setup
