@@ -4,6 +4,8 @@
 ### Config: share Bash configuration with root
 * Use the shared Bash configuration for both `daniel` and `root`.
 * Remove the redundant Bash shebang and interactive-shell check from the shared configuration.
+* Create root's `.gnupg` directory with secure permissions before starting the GPG agent.
+* Deploy the shared `starship.toml` to root's `~/.config`.
 ### Config: make Ollama the default on sleepy
 * Make the Ollama specialisation the default systemd-boot entry on `sleepy`.
 * Keep the Ollama boot default specific to `sleepy` so other machines are unaffected.
