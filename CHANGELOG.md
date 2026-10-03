@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 2.2.0
+### Machine: Added Machine "fatty"
+* Added desktop PC with 8C/16T - 32GB DDR5 RAM - dedicated AMD Graphics card with 16GB RAM
+* Added hardware/fatty.nix as hardware-configuration
+* Removed old hardware-configuration.nix
 ### Config: add Ansible and Python 3
 * Add Ansible and Python 3 to the Home Manager packages.
 ### CHANGELOG.md: updated

@@ -18,7 +18,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, lazyvim, stylix, ... }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      lazyvim,
+      stylix,
+      ...
+    }:
     let
       system = "x86_64-linux";
 
@@ -52,7 +60,8 @@
         homeManagerModule
       ];
 
-      mkNixos = hostModule: extraModules:
+      mkNixos =
+        hostModule: extraModules:
         nixpkgs.lib.nixosSystem {
           inherit system;
           modules = nixosModules ++ [ hostModule ] ++ extraModules;
@@ -64,26 +73,24 @@
         ================================================================
       */
 
-      nixosConfigurations.sleepy =
-        mkNixos ./hosts/sleepy.nix [ ];
+      nixosConfigurations.sleepy = mkNixos ./hosts/sleepy.nix [ ];
 
-      nixosConfigurations.sneezy =
-        mkNixos ./hosts/sneezy.nix [ ];
+      nixosConfigurations.sneezy = mkNixos ./hosts/sneezy.nix [ ];
+
+      nixosConfigurations.fatty = mkNixos ./hosts/fatty.nix [ ];
 
       /*
         Interactive regression VM
         ================================================================
       */
 
-      nixosConfigurations.vm =
-        mkNixos ./vm.nix [ ];
+      nixosConfigurations.vm = mkNixos ./vm.nix [ ];
 
       /*
         Interactive regression VM with Ollama
         ================================================================
       */
 
-      nixosConfigurations.ollama-vm =
-        mkNixos ./vm.nix [ ./modules/ollama.nix ];
+      nixosConfigurations.ollama-vm = mkNixos ./vm.nix [ ./modules/ollama.nix ];
     };
 }
