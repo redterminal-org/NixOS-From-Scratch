@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 2.1.0
+### Config: install custom CA certificate for qutebrowser
+* Add the LinuxCult.net CA certificate to the qutebrowser configuration.
+* Install or update the CA in qutebrowser's NSS certificate database during Home Manager activation.
+* Compare the SHA-256 fingerprint before replacing an existing certificate.
 ### Config: apply Tokyo Night colors to qutebrowser
 * Replace the existing qutebrowser UI colors with the Tokyo Night palette.
 * Apply consistent Tokyo Night colors to completions, downloads, hints, messages, prompts, statusbar, tabs, and webpage backgrounds.
