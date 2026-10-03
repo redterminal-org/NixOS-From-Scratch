@@ -128,19 +128,99 @@ c.zoom.default = '125%'
 
 # ---------------------------------------------------------------------------
 # Colors
-# ---------------------------------------------------------------------------
 
-c.colors.completion.category.fg = 'white'
+# Tokyo Night palette
+# bg     #1a1b26
+# fg     #a9b1d6
+# blk    #24283b
+# red    #f7768e
+# grn    #9ece6a
+# ylw    #e0af68
+# blu    #7aa2f7
+# mag    #bb9af7
+# cyn    #7dcfff
+# brblk  #414868
+# white  #c0caf5
 
-c.colors.webpage.bg = None
+c.colors.completion.fg = '#a9b1d6'
+c.colors.completion.category.fg = '#7dcfff'
+c.colors.completion.category.bg = '#24283b'
+c.colors.completion.even.bg = '#1a1b26'
+c.colors.completion.odd.bg = '#24283b'
+c.colors.completion.item.selected.bg = '#7aa2f7'
+c.colors.completion.item.selected.fg = '#1a1b26'
+c.colors.completion.match.fg = '#e0af68'
+
+c.colors.downloads.bar.bg = '#1a1b26'
+c.colors.downloads.start.bg = '#7aa2f7'
+c.colors.downloads.start.fg = '#1a1b26'
+c.colors.downloads.stop.bg = '#9ece6a'
+c.colors.downloads.stop.fg = '#1a1b26'
+c.colors.downloads.error.bg = '#f7768e'
+c.colors.downloads.error.fg = '#1a1b26'
+
+c.colors.hints.bg = '#e0af68'
+c.colors.hints.fg = '#1a1b26'
+c.colors.hints.match.fg = '#bb9af7'
+
+c.colors.keyhint.fg = '#a9b1d6'
+c.colors.keyhint.suffix.fg = '#7dcfff'
+c.colors.keyhint.bg = '#24283b'
+
+c.colors.messages.info.bg = '#24283b'
+c.colors.messages.info.fg = '#7dcfff'
+c.colors.messages.warning.bg = '#e0af68'
+c.colors.messages.warning.fg = '#1a1b26'
+c.colors.messages.error.bg = '#f7768e'
+c.colors.messages.error.fg = '#1a1b26'
+
+c.colors.prompts.bg = '#24283b'
+c.colors.prompts.fg = '#a9b1d6'
+c.colors.prompts.selected.bg = '#7aa2f7'
+c.colors.prompts.selected.fg = '#1a1b26'
+
+c.colors.statusbar.normal.bg = '#1a1b26'
+c.colors.statusbar.normal.fg = '#a9b1d6'
+c.colors.statusbar.insert.bg = '#9ece6a'
+c.colors.statusbar.insert.fg = '#1a1b26'
+c.colors.statusbar.passthrough.bg = '#bb9af7'
+c.colors.statusbar.passthrough.fg = '#1a1b26'
+c.colors.statusbar.private.bg = '#24283b'
+c.colors.statusbar.private.fg = '#bb9af7'
+c.colors.statusbar.command.bg = '#24283b'
+c.colors.statusbar.command.fg = '#a9b1d6'
+c.colors.statusbar.command.private.bg = '#24283b'
+c.colors.statusbar.command.private.fg = '#bb9af7'
+c.colors.statusbar.progress.bg = '#7dcfff'
+
+c.colors.tabs.bar.bg = '#1a1b26'
+c.colors.tabs.even.bg = '#24283b'
+c.colors.tabs.even.fg = '#a9b1d6'
+c.colors.tabs.odd.bg = '#1a1b26'
+c.colors.tabs.odd.fg = '#a9b1d6'
+c.colors.tabs.selected.even.bg = '#7aa2f7'
+c.colors.tabs.selected.even.fg = '#1a1b26'
+c.colors.tabs.selected.odd.bg = '#7aa2f7'
+c.colors.tabs.selected.odd.fg = '#1a1b26'
+c.colors.tabs.pinned.selected.even.bg = '#7aa2f7'
+c.colors.tabs.pinned.selected.even.fg = '#1a1b26'
+c.colors.tabs.pinned.selected.odd.bg = '#7aa2f7'
+c.colors.tabs.pinned.selected.odd.fg = '#1a1b26'
+c.colors.tabs.pinned.even.bg = '#24283b'
+c.colors.tabs.pinned.even.fg = '#a9b1d6'
+c.colors.tabs.pinned.odd.bg = '#1a1b26'
+c.colors.tabs.pinned.odd.fg = '#a9b1d6'
+c.colors.tabs.indicator.start = '#7dcfff'
+c.colors.tabs.indicator.stop = '#7dcfff'
+c.colors.tabs.indicator.error = '#f7768e'
+c.colors.tabs.indicator.system = 'none'
+
+c.colors.webpage.bg = '#1a1b26'
 c.colors.webpage.preferred_color_scheme = 'dark'
 
 c.colors.webpage.darkmode.enabled = False
 c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 c.colors.webpage.darkmode.policy.page = 'smart'
-
-c.colors.tabs.selected.odd.bg = '#2076B1'
-c.colors.tabs.selected.even.bg = '#2076B1'
 
 
 # ---------------------------------------------------------------------------

@@ -1,6 +1,12 @@
 *CHANGELOG*
 
 ## 2.1.0
+### Config: apply Tokyo Night colors to qutebrowser
+* Replace the existing qutebrowser UI colors with the Tokyo Night palette.
+* Apply consistent Tokyo Night colors to completions, downloads, hints, messages, prompts, statusbar, tabs, and webpage backgrounds.
+* Keep qutebrowser's existing dark color scheme while using the same palette as the Waybar configuration.
+* Use qutebrowser-supported completion background settings and a valid tab indicator color interpolation mode.
+* Match pinned tabs to the corresponding unpinned tab colors and use the selected-tab colors when a pinned tab is active.
 ### Config: add Waybar temperature sensor
 * Add a hardware-independent Waybar temperature module that reads CPU temperatures from available Linux thermal and hwmon sensors.
 * Add a GPU temperature only when a supported GPU sensor is available, preferring the active display GPU and falling back to another available GPU sensor when needed.
