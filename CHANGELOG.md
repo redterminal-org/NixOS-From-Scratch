@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.0.0 - Multi-Machine Setup
+### BUGFIX: restore Ollama default on sleepy
+* Set the Ollama specialisation as the default systemd-boot entry on `sleepy`.
+* Keep the Ollama boot default specific to `sleepy` and tolerate missing Ollama entries.
 ### Config: share Bash configuration with root
 * Use the shared Bash configuration for both `daniel` and `root`.
 * Remove the redundant Bash shebang and interactive-shell check from the shared configuration.
@@ -188,7 +191,7 @@
 
 ## 0.3.0 - Third minor release
 ### Repo: added .luac.json to the repository root
-* Added .luac.json for hyprland.lua to the repository root. So I have autocomplete, no "unknown variable" errors and so on.
+* Added .luac.json for hyprland.lua to the repository root
 ### README.md: updated
 ### Config: Multiple changes
 * Moved some programs from home-packages.nix to all-packages.nix and vice versa
@@ -209,7 +212,7 @@
 ### Modularized all.nix
 * Split original all.nix in all.nix and a few files under "./modules": all-audio.nix, all-fonts.nix, all-hyprland.nix, all-localization.nix, all-network.nix, all-nix.nix, all-packages.nix, all-user.nix, all-wayland.nix
 ### Modularized home.nix
-* Split original home.nix in home.nix and a few files under "./modules": home-applications.nix, home-desktop.nix, home-gpg.nix, home-lazyvim.nix, home-packages.nix, home-private.nix, home-shell.nix
+* Split original home.nix in home.nix and a few modules under "./modules": home-applications.nix, home-desktop.nix, home-gpg.nix, home-lazyvim.nix, home-packages.nix, home-private.nix, home-shell.nix
 * Added new password hash for test VMs
 ### README.md: First introduction
 ### Config: disabled TouchPad, added brightness controls
@@ -262,7 +265,7 @@
 ### Feature(sound): Activate Sound in X11 and Wayland
 * This activates general sound for both, X11 and Wayland
 ### Feature(~/bin): Install ~/bin directory
-* This installs a "$HOME/bin" directory, which is handled by the NixOS config, so to place programs in ~/bin, you have to add them to the "config/bin" directory in the NixOS configuration.
+* This installs a "$HOME/bin" directory, which is handled by the NixOS config, so to place programs in ~/bin, you have to add them to the config/bin directory in the NixOS configuration.
 
 ## 0.0.4
 ### SYSTEM UPGRADE: NixOS 26.05
@@ -291,14 +294,13 @@
 * The directories ".ssh" and ".password-store" and the file "secret.asc" are now *copied* instead of symlinked to fix insecure permissions.
 ### Feat(Test-VM): Added flake to create a test VM of the whole system
 * I created a new flake (vm-configuration.nix), which allows me to build a full virtual system from my NixOS configuration for testing
-
 ## 0.0.1
 ### BUGFIX: Git couldn't find /usr/bin/nvim. Now it uses "nvim" from $PATH
 * Git couldn't find /usr/bin/nvim in NixOS (correct), so I added the "core.editor=vim" option to the Git config
 ### BUGFIX: Qutebrowser Config dir was not writeable
 * The Qutebrowser Config dir was not writeable and qutebrowser didn't start anymore. Now only the needed files are copied into the nixos-store, so the file remains writeable.
 * deleted a few unneccessary/wrong lines and fixed a typo
-* Added "librewolf" to the home.nix programs
+* Added `librewolf` to the home.nix programs
 ### BUGFIX: Path in Activation Script fixed
 * The Path in the activation script to import aecret.asc gpg keys was wrong
 * moved "./config/gnupg/secret.asc"" directly to ".gnupg" with `home.file`
