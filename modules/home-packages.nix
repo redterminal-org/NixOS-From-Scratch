@@ -20,6 +20,8 @@
     zathura
     wtype
     pipx
+    ansible
+    python3
     gemget
 
     # Notification System

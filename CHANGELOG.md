@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 2.2.0
+### Config: add Ansible and Python 3
+* Add Ansible and Python 3 to the Home Manager packages.
 ### CHANGELOG.md: updated
 
 ## 2.1.0
