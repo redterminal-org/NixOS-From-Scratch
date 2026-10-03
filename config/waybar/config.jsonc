@@ -27,7 +27,7 @@
         "disk",
         "custom/sep",
         "battery",
-        "custom/sep",
+        "custom/battery-sep",
         "custom/date",
         "custom/sep",
         "tray"
@@ -83,6 +83,11 @@
         "format-plugged": "Bat: {capacity}% ",
         "format-alt": "Bat: {capacity}%",
         "format-icons": ["", "", "", "", ""]
+    },
+    "custom/battery-sep": {
+        "exec": "printf '|'",
+        "exec-if": "for supply in /sys/class/power_supply/*; do [ -f \"$supply/type\" ] && [ \"$(cat \"$supply/type\")\" = Battery ] && exit 0; done; exit 1",
+        "interval": 10
     },
     "network": {
         "format": "Online",

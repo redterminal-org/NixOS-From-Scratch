@@ -53,6 +53,7 @@ button:hover {
 
 #clock,
 #custom-sep,
+#custom-battery-sep,
 #battery,
 #cpu,
 #memory,
@@ -63,7 +64,8 @@ button:hover {
     color: @white;
 }
 
-#custom-sep {
+#custom-sep,
+#custom-battery-sep {
     color: @brblk;
 }
 

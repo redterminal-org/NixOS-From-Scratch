@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 2.1.0
+### Config: fix Waybar battery separator
+* Keep the battery separators outside the battery module so they are not affected by the battery module styling.
+* Show the right battery separator only when a battery power supply exists, leaving a single separator on systems without a battery.
+* Apply the same separator color and spacing to both separator modules.
 ### Config: restore qutebrowser tabs
 * Enable automatic qutebrowser session saving so open tabs are restored after reopening.
 * Keep the existing qutebrowser session behavior while saving the current tabs automatically on quit.
