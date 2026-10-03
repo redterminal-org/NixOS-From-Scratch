@@ -1,5 +1,8 @@
 *CHANGELOG*
 
+## 2.2.0
+### CHANGELOG.md: updated
+
 ## 2.1.0
 ### Config: install custom CA certificate for qutebrowser
 * Add the LinuxCult.net CA certificate to the qutebrowser configuration.
