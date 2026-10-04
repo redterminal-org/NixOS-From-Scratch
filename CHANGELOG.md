@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 2.2.0
+### README.md: updated
 ### Config: test gpt-oss:20b with CodeCompanion
 * Replace qwen3-coder:30b with gpt-oss:20b for CodeCompanion chat and inline interactions.
 * Stop gpt-oss:20b before gen.nvim translations and when Neovim exits.
