@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.2.0
+### Config: use ROCm for Ollama on "fatty"
+* Use the ROCm-enabled Ollama package for the AMD GPU on "fatty".
+* Keep the shared Ollama configuration GPU-neutral for machines without a dedicated GPU.
 ### Machine: Added Machine "fatty"
 * Added desktop PC with 8C/16T - 32GB DDR5 RAM - dedicated AMD Graphics card with 16GB RAM
 * Added hardware/fatty.nix as hardware-configuration
