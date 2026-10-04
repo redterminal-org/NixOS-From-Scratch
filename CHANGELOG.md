@@ -1,6 +1,11 @@
 *CHANGELOG*
 
 ## 2.2.0
+### Config: test gpt-oss:20b with CodeCompanion
+* Replace qwen3-coder:30b with gpt-oss:20b for CodeCompanion chat and inline interactions.
+* Stop gpt-oss:20b before gen.nvim translations and when Neovim exits.
+* Increase CodeCompanion's Ollama context from 16384 to 32786 tokens.
+* Automatically approve read-only CodeCompanion tools while keeping run_command and write operations behind approval.
 ### BUGFIX: Changed coding LLM back; removed stylix input
 * Switched back to working qwen3-coder:30b from qwen2.5-coder:14b
 * Removed 'inputs.home-manager.follows = "home-manager";' from flake.nix

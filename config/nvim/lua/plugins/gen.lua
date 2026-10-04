@@ -8,7 +8,7 @@ return {
       body = { stream = true, keep_alive = 0 },
       init = function()
         pcall(io.popen, "ollama serve > /dev/null 2>&1 &")
-        vim.fn.system({ "ollama", "stop", "qwen3-coder:30b" })
+        vim.fn.system({ "ollama", "stop", "gpt-oss:20b" })
       end,
     },
     config = function(_, opts)

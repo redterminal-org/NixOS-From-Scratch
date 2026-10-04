@@ -17,16 +17,33 @@ return {
                 end,
               },
               schema = {
-                num_ctx = { default = 16384 },
+                num_ctx = { default = 32786 },
                 keep_alive = { default = "-1m" },
               },
             })
           end,
         },
       },
+      tools = {
+        read_file = {
+          opts = { require_approval_before = false },
+        },
+        grep_search = {
+          opts = { require_approval_before = false },
+        },
+        file_search = {
+          opts = { require_approval_before = false },
+        },
+        get_diagnostics = {
+          opts = { require_approval_before = false },
+        },
+        get_changed_files = {
+          opts = { require_approval_before = false },
+        },
+      },
       interactions = {
         chat = {
-          adapter = { name = "ollama", model = "qwen3-coder:30b" },
+          adapter = { name = "ollama", model = "gpt-oss:20b" },
           tools = {
             opts = {
               default_tools = {
@@ -42,7 +59,7 @@ return {
             },
           },
         },
-        inline = { adapter = { name = "ollama", model = "qwen3-coder:30b" } },
+        inline = { adapter = { name = "ollama", model = "gpt-oss:20b" } },
       },
       --opts = {
       --  log_level = "TRACE",
@@ -57,7 +74,7 @@ return {
 
       vim.api.nvim_create_autocmd("VimLeavePre", {
         callback = function()
-          vim.fn.system({ "ollama", "stop", "qwen3-coder:30b" })
+          vim.fn.system({ "ollama", "stop", "gpt-oss:20b" })
         end,
       })
     end,
