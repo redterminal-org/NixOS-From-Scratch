@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.2.0
+### BUGFIX: start Ollama after AMD GPU devices
+* Start the Ollama service only after the AMD KFD and DRM render devices are available on "fatty".
+* Keep the GPU-specific startup ordering local to the "fatty" Ollama specialisation.
 ### Config: Changed coding LLM
 * Changed the Coding LLM from qwen3-coder:30b to qwen2.5-coder:14b
 ### Config: use ROCm for Ollama on "fatty"
