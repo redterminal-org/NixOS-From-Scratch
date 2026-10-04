@@ -26,7 +26,7 @@ return {
       },
       interactions = {
         chat = {
-          adapter = { name = "ollama", model = "qwen2.5-coder:14b" },
+          adapter = { name = "ollama", model = "qwen3-coder:30b" },
           tools = {
             opts = {
               default_tools = {
@@ -44,6 +44,9 @@ return {
         },
         inline = { adapter = { name = "ollama", model = "qwen3-coder:30b" } },
       },
+      --opts = {
+      --  log_level = "TRACE",
+      --},
     },
     keys = {
       { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "CodeCompanion Chat" },

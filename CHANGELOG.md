@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.2.0
+### BUGFIX: Changed coding LLM back; removed stylix input
+* Switched back to working qwen3-coder:30b from qwen2.5-coder:14b
+* Removed 'inputs.home-manager.follows = "home-manager";' from flake.nix
 ### BUGFIX: start Ollama after AMD GPU devices
 * Start the Ollama service only after the AMD KFD and DRM render devices are available on "fatty".
 * Keep the GPU-specific startup ordering local to the "fatty" Ollama specialisation.
