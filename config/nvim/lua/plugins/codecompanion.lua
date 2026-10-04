@@ -26,7 +26,7 @@ return {
       },
       interactions = {
         chat = {
-          adapter = { name = "ollama", model = "qwen3-coder:30b" },
+          adapter = { name = "ollama", model = "qwen2.5-coder:14b" },
           tools = {
             opts = {
               default_tools = {
@@ -47,7 +47,7 @@ return {
     },
     keys = {
       { "<leader>cc", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "CodeCompanion Chat" },
-      { "<leader>ci", "<cmd>CodeCompanion<cr>", mode = { "n", "v" }, desc = "CodeCompanion Inline" },
+      { "<leader>ci", "<cmd>CodeCompanion<cr>",            mode = { "n", "v" }, desc = "CodeCompanion Inline" },
     },
     config = function(_, opts)
       require("codecompanion").setup(opts)

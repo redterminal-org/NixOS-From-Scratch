@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 2.2.0
+### Config: Changed coding LLM
+* Changed the Coding LLM from qwen3-coder:30b to qwen2.5-coder:14b
 ### Config: use ROCm for Ollama on "fatty"
 * Use the ROCm-enabled Ollama package for the AMD GPU on "fatty".
 * Keep the shared Ollama configuration GPU-neutral for machines without a dedicated GPU.
