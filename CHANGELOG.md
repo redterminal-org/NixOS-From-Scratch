@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.3.0
+### Config: allow passwordless ZFS commands on fatty
+* Allow the wheel group to run `zfs list` without a password on "fatty".
+* Allow the wheel group to run `zfs receive` without a password on "fatty".
 ### Added: some software packages
 * Added to all-packages.nix: killall, pv, sshfs, gdu
 * Added to home-packages: zbar

@@ -29,4 +29,20 @@
       echo "warning: Ollama specialisation boot entry not found; keeping the NixOS default"
     fi
   '';
+
+  security.sudo.extraRules = [
+    {
+      groups = [ "wheel" ];
+      commands = [
+        {
+          command = "${pkgs.zfs}/bin/zfs list";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "${pkgs.zfs}/bin/zfs receive";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 }
