@@ -16,7 +16,11 @@
     inetutils
     bsd-finger
     brightnessctl
+    killall
     jq
+    pv
+    sshfs
+    gdu
     wev
     gnupg
     starship

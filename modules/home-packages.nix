@@ -24,6 +24,7 @@
     python3
     gemget
     abook
+    zbar
 
     # Notification System
     libnotify

@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.3.0
+### Added: some software packages
+* Added to all-packages.nix: killall, pv, sshfs, gdu
+* Added to home-packages: zbar
 ### Config: install ZFS support
 * Add ZFS filesystem support to NixOS.
 * Install the ZFS package with tools such as `zfs` and `zpool`.
