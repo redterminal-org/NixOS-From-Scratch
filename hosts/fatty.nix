@@ -6,6 +6,7 @@
   ];
 
   networking.hostName = "fatty";
+  networking.hostId = "7c4e91a2";
 
   specialisation.ollama.configuration = {
     services.ollama.package = pkgs.ollama-rocm;

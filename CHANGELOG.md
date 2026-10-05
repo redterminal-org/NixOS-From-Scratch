@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.3.0
+### Config: install ZFS support
+* Add ZFS filesystem support to NixOS.
+* Install the ZFS package with tools such as `zfs` and `zpool`.
 ### LazyVim: Added VimWiki dropdown in hypr and other packages
 * LazyVim Plugins: VimWiki, Ultisnips, goyo
 * LazyVim Plugins: gopher-syntax, own find-vimwiki-words

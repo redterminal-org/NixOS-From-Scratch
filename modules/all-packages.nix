@@ -20,6 +20,7 @@
     wev
     gnupg
     starship
+    zfs
 
     # Hyprland tools
     wofi
