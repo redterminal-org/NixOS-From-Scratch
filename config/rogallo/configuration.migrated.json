@@ -1,4 +1,5 @@
 {
+    "migrated": true,
     "theme": "tokyo-night",
     "bindings": {
         "AddLocationToBookmarks": "ctrl+b",

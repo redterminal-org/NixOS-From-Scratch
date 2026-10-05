@@ -1,5 +1,8 @@
 *CHANGELOG*
 
+## 2.3.0
+### Config: Updated to new yaml configuration for Rogallo
+
 ## 2.2.0
 ### README.md: updated
 ### Config: test gpt-oss:20b with CodeCompanion
