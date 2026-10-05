@@ -1,0 +1,38 @@
+snippet je "Journal entry skeleton" b
+# `date '+%A, %Y/%m/%d'`
+Tags:
+
+## TODO
+
+## Log
+
+# Kurze Notizen
+endsnippet
+
+snippet bp "Blood Pressure Date" 
+`date '+%a, %Y-%m-%d %H:%M'` -- 
+endsnippet
+
+snippet jd "Journal Date Link" b
+[[`date '+%Y/%m/%d'`]]
+endsnippet
+
+snippet ue "Journal entry for Update Sundays" b
+# `date '+%A, %Y/%m/%d'`
+Tags: :Updates:Homelab:Backup:
+
+## TODO
+- [ ] Update: all workstations (sudo nixos-rebuild switch --flake ...)
+- [ ] ZFS: receive all new snapshots from zdata (pve1) -> zbackup (ab 06:30 Uhr)
+- [ ] ReaR: neue rear ISO backups von pve1 und pve2 runterladen, nach "zfs
+      receive" (~/LocalWork/rear/get_pve_rear_isos.sh auf dopey)
+- [ ] Update: pve nodes and containers (nicht zwischen 13:00 und 13:30-Ansible)
+- [ ] Update: infoscreen (Ansible)
+- [ ] Update: Check viking and merlin for updates
+- [ ] Update: Check mainrouter for updates.
+
+## Log
+
+# Kurze Notizen
+endsnippet
+

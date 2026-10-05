@@ -25,6 +25,7 @@ local menu = "wofi --show drun"
 local reloadWaybar = "pkill waybar; waybar"
 local snip = "snip"
 local dropdownTerminal = "kitty --class dropdown-terminal"
+local vimwikiTerminal = "kitty --class vimwiki-terminal --title Notes -d ~/Work/VimWiki/ nvim ~/Work/VimWiki/index.wiki"
 
 
 -----------------
@@ -355,6 +356,18 @@ hl.bind("F12", function()
   end
 end)
 
+-- Toggle VimWiki Notes dropdown
+hl.bind(mainMod .. " + N", function()
+  local workspace = hl.get_workspace("special:vimwiki")
+
+  if workspace == nil then
+    hl.dispatch(hl.dsp.exec_cmd(vimwikiTerminal))
+  else
+    hl.dispatch(hl.dsp.workspace.toggle_special("vimwiki"))
+  end
+end)
+
+
 -------------------
 --- WORKSPACES ---
 -------------------
@@ -463,6 +476,17 @@ hl.window_rule({
     class = "^dropdown-terminal$",
   },
   workspace = "special:dropdown",
+  float = true,
+  size = { "(monitor_w*0.6)", "(monitor_h*0.7)" },
+  center = true,
+})
+-- Configure the VimWiki dropdown window.
+hl.window_rule({
+  name = "vimwiki-terminal",
+  match = {
+    class = "^vimwiki-terminal$",
+  },
+  workspace = "special:vimwiki",
   float = true,
   size = { "(monitor_w*0.6)", "(monitor_h*0.7)" },
   center = true,

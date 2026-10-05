@@ -1,6 +1,11 @@
 *CHANGELOG*
 
 ## 2.3.0
+### LazyVim: Added VimWiki dropdown in hypr and other packages
+* LazyVim Plugins: VimWiki, Ultisnips, goyo
+* LazyVim Plugins: gopher-syntax, own find-vimwiki-words
+* LazyVim: Support for gophermaps and gemtext
+* Hyprland: Added VimWiki dropdown on "SUPER+n"
 ### Added: Added adressbook program abook to home-packages.nix
 ### Config: Updated to new yaml configuration for Rogallo
 
