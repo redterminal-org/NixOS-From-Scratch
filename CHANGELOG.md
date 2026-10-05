@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 2.3.0
+### Added: Added adressbook program abook to home-packages.nix
 ### Config: Updated to new yaml configuration for Rogallo
 
 ## 2.2.0

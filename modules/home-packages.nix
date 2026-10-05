@@ -23,6 +23,7 @@
     ansible
     python3
     gemget
+    abook
 
     # Notification System
     libnotify
@@ -34,8 +35,7 @@
   ];
 
   # Rogallo Install / Upgrade
-  home.activation.updatePipxPackages =
-    config.lib.dag.entryAfter [ "writeBoundary" ] ''
-      ${pkgs.pipx}/bin/pipx upgrade rogallo || ${pkgs.pipx}/bin/pipx install rogallo
-    '';
+  home.activation.updatePipxPackages = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    ${pkgs.pipx}/bin/pipx upgrade rogallo || ${pkgs.pipx}/bin/pipx install rogallo
+  '';
 }
