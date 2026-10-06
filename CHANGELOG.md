@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 2.3.0
+### Config: disabled "programs.ssh"
+* The automatic configuration of SSH was removed and the config the Secrets store is used instead.
 ### Config: allow passwordless ZFS commands on fatty
 * Allow the wheel group to run `zfs list` without a password on "fatty".
 * Allow the wheel group to run `zfs receive` without a password on "fatty".

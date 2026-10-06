@@ -1,15 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  programs.ssh = {
-    enable = true;
-    enableDefaultConfig = false;
-
-    settings."*" = {
-      addKeysToAgent = "24h";
-    };
-  };
-
   services.ssh-agent = {
     enable = true;
     defaultMaximumIdentityLifetime = 86400;
