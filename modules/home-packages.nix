@@ -25,6 +25,7 @@
     gemget
     abook
     zbar
+    tmux
 
     # Notification System
     libnotify

@@ -2,54 +2,49 @@
 
 {
   # QuteBrowser Configuration
-  home.file.".config/qutebrowser/config.py".source =
-    ../config/qutebrowser/config.py;
+  home.file.".config/qutebrowser/config.py".source = ../config/qutebrowser/config.py;
   home.file.".config/qutebrowser/base16_gruvbox_dark_hard.py".source =
     ../config/qutebrowser/base16_gruvbox_dark_hard.py;
 
-  home.file.".config/qutebrowser/linuxcult-ca.pem".source =
-    ../config/qutebrowser/linuxcult-ca.pem;
+  home.file.".config/qutebrowser/linuxcult-ca.pem".source = ../config/qutebrowser/linuxcult-ca.pem;
 
-  home.activation.installQutebrowserCA =
-    config.lib.dag.entryAfter [ "writeBoundary" ] ''
-      nssdb="$HOME/.pki/nssdb"
-      ca="${../config/qutebrowser/linuxcult-ca.pem}"
-      nickname="LinuxCult.net"
+  home.activation.installQutebrowserCA = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+    nssdb="$HOME/.pki/nssdb"
+    ca="${../config/qutebrowser/linuxcult-ca.pem}"
+    nickname="LinuxCult.net"
 
-      mkdir -p "$nssdb"
+    mkdir -p "$nssdb"
 
-      if [ ! -f "$nssdb/cert9.db" ]; then
-        ${pkgs.nssTools}/bin/certutil -N -d "sql:$nssdb" --empty-password
-      fi
+    if [ ! -f "$nssdb/cert9.db" ]; then
+      ${pkgs.nssTools}/bin/certutil -N -d "sql:$nssdb" --empty-password
+    fi
 
-      source_fingerprint="$(
-        ${pkgs.openssl}/bin/openssl x509 -in "$ca" -noout -fingerprint -sha256
+    source_fingerprint="$(
+      ${pkgs.openssl}/bin/openssl x509 -in "$ca" -noout -fingerprint -sha256
+    )"
+
+    if ${pkgs.nssTools}/bin/certutil -L -d "sql:$nssdb" -n "$nickname" >/dev/null 2>&1; then
+      installed_fingerprint="$(
+        ${pkgs.nssTools}/bin/certutil -L -d "sql:$nssdb" -n "$nickname" -a |
+        ${pkgs.openssl}/bin/openssl x509 -noout -fingerprint -sha256
       )"
+    else
+      installed_fingerprint=""
+    fi
 
-      if ${pkgs.nssTools}/bin/certutil -L -d "sql:$nssdb" -n "$nickname" >/dev/null 2>&1; then
-        installed_fingerprint="$(
-          ${pkgs.nssTools}/bin/certutil -L -d "sql:$nssdb" -n "$nickname" -a |
-          ${pkgs.openssl}/bin/openssl x509 -noout -fingerprint -sha256
-        )"
-      else
-        installed_fingerprint=""
-      fi
-
-      if [ "$source_fingerprint" != "$installed_fingerprint" ]; then
-        ${pkgs.nssTools}/bin/certutil -D -d "sql:$nssdb" -n "$nickname" >/dev/null 2>&1 || true
-        ${pkgs.nssTools}/bin/certutil -A -d "sql:$nssdb" -i "$ca" -n "$nickname" -t "TC,C,T"
-      fi
-    '';
+    if [ "$source_fingerprint" != "$installed_fingerprint" ]; then
+      ${pkgs.nssTools}/bin/certutil -D -d "sql:$nssdb" -n "$nickname" >/dev/null 2>&1 || true
+      ${pkgs.nssTools}/bin/certutil -A -d "sql:$nssdb" -i "$ca" -n "$nickname" -t "TC,C,T"
+    fi
+  '';
 
   # Other programs
   home.file.".config/kitty".source = ../config/kitty;
   home.file.".config/yazi".source = ../config/yazi;
-  home.file.".config/yazi-lazyvim/yazi.toml".source =
-    ../config/yazi-lazyvim/yazi.toml;
-  home.file.".config/yazi-lazyvim/keymap.toml".source =
-    ../config/yazi-lazyvim/keymap.toml;
-  home.file.".config/yazi-lazyvim/theme.toml".source =
-    ../config/yazi-lazyvim/theme.toml;
+  home.file.".config/tmux".source = ../config/tmux;
+  home.file.".config/yazi-lazyvim/yazi.toml".source = ../config/yazi-lazyvim/yazi.toml;
+  home.file.".config/yazi-lazyvim/keymap.toml".source = ../config/yazi-lazyvim/keymap.toml;
+  home.file.".config/yazi-lazyvim/theme.toml".source = ../config/yazi-lazyvim/theme.toml;
   home.file.".local/bin/yazi" = {
     text = ''
       #!${pkgs.bash}/bin/bash
@@ -168,8 +163,7 @@
     ];
   };
 
-home.activation.copyGTLConfigFiles =
-  config.lib.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.copyGTLConfigFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
     target="${config.home.homeDirectory}/.config/gtl"
     sourceRoot="${../config/gtl}"
 
@@ -194,8 +188,7 @@ home.activation.copyGTLConfigFiles =
     ' sh "$sourceRoot" "$target" {} +
   '';
 
-home.activation.copyRogalloConfigFiles =
-  config.lib.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.copyRogalloConfigFiles = config.lib.dag.entryAfter [ "writeBoundary" ] ''
     target="${config.home.homeDirectory}/.config/rogallo"
     sourceRoot="${../config/rogallo}"
 

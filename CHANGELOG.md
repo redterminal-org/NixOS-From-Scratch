@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 2.3.0
+### Added: TMUX and TMUX configuration
 ### Config: disabled "programs.ssh"
 * The automatic configuration of SSH was removed and the config the Secrets store is used instead.
 ### Config: allow passwordless ZFS commands on fatty
