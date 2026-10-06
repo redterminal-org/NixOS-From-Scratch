@@ -40,6 +40,15 @@ return {
         get_changed_files = {
           opts = { require_approval_before = false },
         },
+        insert_edit_into_file = {
+          opts = { require_approval_before = false },
+        },
+        run_command = {
+          opts = {
+            require_approval_before = false,
+            require_cmd_approval = false,
+          },
+        },
       },
       interactions = {
         chat = {
@@ -55,7 +64,7 @@ return {
                 "insert_edit_into_file",
                 "run_command",
               },
-              approval_mode = "ask",
+              approval_mode = "auto",
             },
           },
         },

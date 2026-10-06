@@ -1,5 +1,9 @@
 *CHANGELOG*
 
+## 2.4.0
+### LazyVim: changed "run_command" approval in codecompanion.lua
+* Changed the "require_approval_before" to "false" in codecompanion.lua
+
 ## 2.3.0
 ### Docs: update README package and key binding documentation
 * Update the packaged software list to match the current NixOS and Home Manager configuration.
