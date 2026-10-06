@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.3.0
+### Docs: update README package and key binding documentation
+* Update the packaged software list to match the current NixOS and Home Manager configuration.
+* Document the F12 terminal dropdown and SUPER + N VimWiki dropdown key bindings.
 ### Added: TMUX and TMUX configuration
 ### Config: disabled "programs.ssh"
 * The automatic configuration of SSH was removed and the config the Secrets store is used instead.

@@ -193,12 +193,13 @@ The following are the most important key bindings configured in `config/hypr/hyp
 | `SUPER + E` | Open Dolphin file manager |
 | `SUPER + D` | Open application launcher |
 | `SUPER + R` | Reload Waybar |
-| `SUPER + S` | Take a screenshot |
+| `SUPER + S` | Take a screenshot with Snip |
 | `SUPER + P` | Open password menu |
 | `SUPER + O` | Open one-time-password menu |
 | `SUPER + M` | Open radio menu |
 | `SUPER + .` | Open emoji picker |
-| `F12` | Toggle dropdown terminal |
+| `F12` | Toggle terminal dropdown |
+| `SUPER + N` | Toggle VimWiki dropdown |
 
 ### Window Management
 
@@ -253,10 +254,15 @@ The complete key binding configuration can be found in `config/hypr/hyprland.lua
 - `inetutils`: Network utilities
 - `bsd-finger`: User information utility
 - `brightnessctl`: Screen brightness control
+- `killall`: Process termination utility
 - `jq`: Command-line JSON processor
+- `pv`: Pipe Viewer
+- `sshfs`: SSH filesystem client
+- `gdu`: Disk usage analyzer
 - `wev`: Wayland input event viewer
 - `gnupg`: GnuPG encryption and signing tools
 - `starship`: Cross-shell prompt
+- `zfs`: ZFS filesystem tools
 - `wofi`: Wayland application launcher
 - `waybar`: Wayland status bar
 - `hyprpaper`: Hyprland wallpaper utility
@@ -286,6 +292,9 @@ The complete key binding configuration can be found in `config/hypr/hyprland.lua
 - `ansible`: Automation and configuration management tool
 - `python3`: Python interpreter
 - `gemget`: Command-line Gemini client
+- `abook`: Text-based address book
+- `zbar`: Barcode and QR code scanner
+- `tmux`: Terminal multiplexer
 - `rogallo`: TUI Gemini client
 - `libnotify`: Desktop notification library
 - `swaynotificationcenter`: Wayland notification center
