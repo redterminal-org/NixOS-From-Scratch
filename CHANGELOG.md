@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.4.0
+### Feature: scanning with my Brother MFC-1910W
+* Activated "hardware.sane" for my Brother MFC-1910W printer/scanner
+* added: alias scan="LD_LIBRARY_PATH="/etc/sane-libs" scanimage --format=jpeg" locally
 ### LazyVim: changed "run_command" approval in codecompanion.lua
 * Changed the "require_approval_before" to "false" in codecompanion.lua
 

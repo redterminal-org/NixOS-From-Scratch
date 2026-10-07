@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     wget
     curl
@@ -25,6 +27,7 @@
     gnupg
     starship
     zfs
+    sane-backends # scanimage Package
 
     # Hyprland tools
     wofi
