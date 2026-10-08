@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.4.0
+### Config: allow brscan4 and brother-udev-rule-type1 as non-free packages
+* Allow the non-free `brscan4` and `brother-udev-rule-type1` packages specifically in `all-printing.nix`.
+* Remove global `nixpkgs.config.allowUnfree = true;` from `all-packages.nix`.
 ### Feature: scanning with my Brother MFC-1910W
 * Activated "hardware.sane" for my Brother MFC-1910W printer/scanner
 * added: alias scan="LD_LIBRARY_PATH="/etc/sane-libs" scanimage --format=jpeg" locally
