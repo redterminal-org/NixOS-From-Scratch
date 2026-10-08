@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfreePackages = [
+    "brscan4"
+    "brscan4-etc-files"
+    "brother-udev-rule-type1"
+  ];
+
   services.printing = {
     enable = true;
     drivers = [
