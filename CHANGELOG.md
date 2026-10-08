@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 2.4.0
+### Added packages: added 'gocryptfs' and 'openssl' to './modules/all-packages.nix'
 ### Config: allow brscan4 and brother-udev-rule-type1 and brscan4-etc-files as non-free packages
 * Allow the non-free `brscan4`, `brscan4-etc-files` and `brother-udev-rule-type1` packages specifically in `all-printing.nix`.
 * Remove global `nixpkgs.config.allowUnfree = true;` from `all-packages.nix`.

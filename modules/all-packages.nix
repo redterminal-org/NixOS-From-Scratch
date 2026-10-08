@@ -26,6 +26,8 @@
     starship
     zfs
     sane-backends # scanimage Package
+    gocryptfs
+    openssl
 
     # Hyprland tools
     wofi
