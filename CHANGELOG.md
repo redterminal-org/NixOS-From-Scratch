@@ -1,6 +1,11 @@
 *CHANGELOG*
 
 ## 2.5.0
+### Config: integrate private WireGuard import and kill switch
+* Import optional `wireguard/wg0.conf` as part of the existing private-data import.
+* Keep WireGuard secrets out of Git and the Nix Store and install the NetworkManager profile through sudo Askpass.
+* Route private networks and services through WireGuard while preserving access to locally routed LAN devices.
+* Block direct Internet traffic while the VPN is intended to be active and restore normal connectivity after intentional deactivation.
 ### Added host: Added configuration for 'grumpy' host
 
 ## 2.4.0
