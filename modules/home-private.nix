@@ -12,8 +12,8 @@ let
   '';
 
   sudoAskpass = pkgs.writeShellScript "sudo-askpass" ''
-    prompt="''\${1:-Administrator password}"
-    printf '\n' | \${pkgs.wofi}/bin/wofi --dmenu --password --prompt "$prompt" --cache-file /dev/null
+    prompt="''${1:-Administrator password}"
+    printf '\n' | ${pkgs.wofi}/bin/wofi --dmenu --password --prompt "$prompt" --cache-file /dev/null
   '';
 
   promptRemote = pkgs.writeShellScript "prompt-private-remote" ''
@@ -175,7 +175,7 @@ let
     fi
 
     if [ -d "$tmpdir/wireguard" ] && [ ! -f "$tmpdir/wireguard/wg0.conf" ]; then
-      \${notify} "Private data error" "The wireguard directory exists, but wg0.conf is missing."
+      ${notify} "Private data error" "The wireguard directory exists, but wg0.conf is missing."
       exit 1
     fi
 
@@ -250,14 +250,14 @@ let
       -exec chmod 600 {} \;
 
     if [ -d "$tmpdir/wireguard" ]; then
-      export SUDO_ASKPASS="\${sudoAskpass}"
+      export SUDO_ASKPASS="${sudoAskpass}"
       vpnImportCommand="$(command -v vpn-private-import || true)"
       if [ -z "$vpnImportCommand" ] || [ ! -x "$vpnImportCommand" ]; then
-        \${notify} "Private data error" "The vpn-private-import command is not available."
+        ${notify} "Private data error" "The vpn-private-import command is not available."
         exit 1
       fi
-      if ! \${pkgs.sudo}/bin/sudo -A "$vpnImportCommand" "$tmpdir/wireguard/wg0.conf"; then
-        \${notify} "Private data error" "WireGuard import failed. No installation marker was set."
+      if ! ${pkgs.sudo}/bin/sudo -A "$vpnImportCommand" "$tmpdir/wireguard/wg0.conf"; then
+        ${notify} "Private data error" "WireGuard import failed. No installation marker was set."
         exit 1
       fi
     fi
