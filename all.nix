@@ -3,6 +3,7 @@
 {
   imports = [
     ./modules/all-network.nix
+    ./modules/all-wireguard.nix
     ./modules/all-localization.nix
     ./modules/all-audio.nix
     ./modules/all-wayland.nix
