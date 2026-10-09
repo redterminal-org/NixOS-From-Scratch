@@ -78,6 +78,8 @@
 
       nixosConfigurations.fatty = mkNixos ./hosts/fatty.nix [ ];
 
+      nixosConfigurations.grumpy = mkNixos ./hosts/grumpy.nix [ ];
+
       /*
         Interactive regression VM
         ================================================================

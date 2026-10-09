@@ -1,5 +1,8 @@
 *CHANGELOG*
 
+## 2.5.0
+### Added host: Added configuration for 'grumpy' host
+
 ## 2.4.0
 ### Added packages: added 'gocryptfs' and 'openssl' to './modules/all-packages.nix'
 ### Config: allow brscan4 and brother-udev-rule-type1 and brscan4-etc-files as non-free packages
