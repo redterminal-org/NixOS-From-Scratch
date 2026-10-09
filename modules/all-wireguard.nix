@@ -2,13 +2,13 @@
 
 let
   vpnAskpass = pkgs.writeShellScript "vpn-askpass" ''
-    prompt="''\${1:-Administrator password}"
-    printf '\n' | \${pkgs.wofi}/bin/wofi --dmenu --password --prompt "$prompt" --cache-file /dev/null
+    prompt="''${1:-Administrator password}"
+    printf '\n' | ${pkgs.wofi}/bin/wofi --dmenu --password --prompt "$prompt" --cache-file /dev/null
   '';
 
   vpnSwitchRoot = pkgs.writeShellScriptBin "vpn-switch-root" ''
     set -euo pipefail
-    PATH=\${lib.makeBinPath [ pkgs.coreutils pkgs.gawk pkgs.glibc.bin pkgs.gnused pkgs.iproute2 pkgs.networkmanager pkgs.nftables ]}
+    PATH=${lib.makeBinPath [ pkgs.coreutils pkgs.gawk pkgs.glibc.bin pkgs.gnused pkgs.iproute2 pkgs.networkmanager pkgs.nftables ]}
     export PATH
     config=/etc/wireguard/wg0.conf
     table=wg_killswitch
@@ -37,13 +37,13 @@ let
         ($0 !~ / via / || tolower($1) ~ /^fc/ || tolower($1) ~ /^fd/) { print $1 }')
     }
 
-    case "''\${1:-}" in
+    case "''${1:-}" in
       on)
         [ -f "$config" ] || { echo "Missing $config; import private data first." >&2; exit 1; }
         endpoint="$(awk -F= '/^[[:space:]]*Endpoint[[:space:]]*=/ {gsub(/[[:space:]]/, "", $1); gsub(/^[[:space:]]+|[[:space:]]+$/, "", $2); print $2; exit}' "$config")"
         case "$endpoint" in
-          \[*\]:*) host="''\${endpoint#\[}"; host="''\${host%%\]*}"; port="''\${endpoint##*:}" ;;
-          *:*) host="''\${endpoint%:*}"; port="''\${endpoint##*:}" ;;
+          \[*\]:*) host="''${endpoint#\[}"; host="''${host%%\]*}"; port="''${endpoint##*:}" ;;
+          *:*) host="''${endpoint%:*}"; port="''${endpoint##*:}" ;;
           *) echo "Invalid WireGuard Endpoint." >&2; exit 1 ;;
         esac
         case "$port" in ""|*[!0-9]*) echo "Invalid WireGuard endpoint port." >&2; exit 1 ;; esac
@@ -110,9 +110,9 @@ let
 
   vpnPrivateImport = pkgs.writeShellScriptBin "vpn-private-import" ''
     set -euo pipefail
-    PATH=\${lib.makeBinPath [ pkgs.coreutils pkgs.networkmanager ]}
+    PATH=${lib.makeBinPath [ pkgs.coreutils pkgs.networkmanager ]}
     export PATH
-    source_file="''\${1:-}"
+    source_file="''${1:-}"
     [ "$(id -u)" -eq 0 ] || { echo "Must run as root." >&2; exit 1; }
     [ -f "$source_file" ] || { echo "WireGuard configuration file is missing." >&2; exit 1; }
     install -D -o root -g root -m 600 "$source_file" /etc/wireguard/wg0.conf
@@ -122,14 +122,14 @@ let
   '';
 
   vpnSwitch = pkgs.writeShellScriptBin "vpn-switch" ''
-    export SUDO_ASKPASS="\${vpnAskpass}"
-    exec \${pkgs.sudo}/bin/sudo -A \${vpnSwitchRoot}/bin/vpn-switch-root "$@"
+    export SUDO_ASKPASS="${vpnAskpass}"
+    exec ${pkgs.sudo}/bin/sudo -A ${vpnSwitchRoot}/bin/vpn-switch-root "$@"
   '';
 
   vpnDispatcher = pkgs.writeShellScript "vpn-route-refresh" ''
-    case "''\${2:-}" in
+    case "''${2:-}" in
       up|down|dhcp4-change|dhcp6-change|connectivity-change)
-        exec \${vpnSwitchRoot}/bin/vpn-switch-root refresh ;;
+        exec ${vpnSwitchRoot}/bin/vpn-switch-root refresh ;;
     esac
   '';
 in
