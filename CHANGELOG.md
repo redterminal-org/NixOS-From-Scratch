@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 2.5.0
+### Added: recent version of GTL ("gtl") to "./config/bin/"
+* Switched the GTL ("gtl") binary to the most recent version: v1.4.4-fork
 ### Added: "Go" programming language; some tools for LazyVim
 * Added the "Go" programming language to home-packages.nix
 * LazyVim - LSP: gopls added
