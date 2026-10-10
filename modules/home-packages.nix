@@ -19,13 +19,16 @@
     mpv
     zathura
     wtype
-    pipx
     ansible
-    python3
     gemget
     abook
     zbar
     tmux
+
+    # Programming Languages
+    python3
+    pipx
+    go
 
     # Notification System
     libnotify

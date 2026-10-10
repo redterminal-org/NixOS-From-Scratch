@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 2.5.0
+### Added: "Go" programming language; some tools for LazyVim
+* Added the "Go" programming language to home-packages.nix
+* LazyVim - LSP: gopls added
+* LazyVim - Linter: golangci-lint added
 ### BUGFIX: added network.hostId to "vm.nix"
 ### Added host: Added configuration for 'grumpy' host
 

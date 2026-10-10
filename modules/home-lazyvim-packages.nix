@@ -19,8 +19,10 @@
     pyright
     shfmt
     nil
+    gopls
 
     # Linters
     shellcheck
+    golangci-lint
   ];
 }
