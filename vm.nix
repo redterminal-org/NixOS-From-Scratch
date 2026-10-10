@@ -34,6 +34,7 @@
 
   # Use a dedicated hostname for the test VM.
   networking.hostName = "nixos-test";
+  networking.hostId = "7854ae63";
 
   virtualisation.vmVariantWithBootLoader = {
     virtualisation = {
@@ -69,7 +70,6 @@
 
     # Set a temporary password for the test user. Default "nixos",
     # but you should set your own with "mkpasswd --method=yescrypt"
-    users.users.daniel.hashedPassword =
-      "$y$j9T$AyxrOoeT4L8sOzwxL1KRh.$d2f1DG6FkIqNzBrO0BdqHvsjfND4tI211wYak4oRr2A";
+    users.users.daniel.hashedPassword = "$y$j9T$AyxrOoeT4L8sOzwxL1KRh.$d2f1DG6FkIqNzBrO0BdqHvsjfND4tI211wYak4oRr2A";
   };
 }

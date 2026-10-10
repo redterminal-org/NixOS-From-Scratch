@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 2.5.0
+### BUGFIX: added network.hostId to "vm.nix"
 ### Added host: Added configuration for 'grumpy' host
 
 ## 2.4.0
