@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.5.0
+### Config: reduce Hyprland UI scaling on grumpy
+* Set the Hyprland monitor scale to 0.8 on grumpy.
+* Keep the default monitor scale at 1.0 on all other hosts.
 ### Feature: add Hyprlock with Print and lid-close locking
 * Add Hyprlock with a password prompt and Print-key activation.
 * Lock the session and suspend only on laptop lid closure during a Hyprland session.

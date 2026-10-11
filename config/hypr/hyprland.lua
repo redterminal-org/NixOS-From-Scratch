@@ -1,9 +1,11 @@
 -- Monitor configuration
+local scale = dofile(os.getenv("HOME") .. "/.config/hypr-host.lua")
+
 hl.monitor({
   output = "",
   mode = "preferred",
   position = "auto",
-  scale = 1.0,
+  scale = scale,
 })
 
 -- Fallback monitor configuration

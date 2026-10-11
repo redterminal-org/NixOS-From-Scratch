@@ -4,6 +4,9 @@
   services.swaync.enable = true;
 
   home.file.".config/hypr".source = ../config/hypr;
+  home.file.".config/hypr-host.lua".text = ''
+    return ${if osConfig.networking.hostName == "grumpy" then "0.8" else "1.0"}
+  '';
   home.file.".local/bin/hyprland-lid-close" = {
     source = ../config/hypr/lid-close.sh;
     executable = true;
