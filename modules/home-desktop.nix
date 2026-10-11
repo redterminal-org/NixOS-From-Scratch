@@ -4,6 +4,10 @@
   services.swaync.enable = true;
 
   home.file.".config/hypr".source = ../config/hypr;
+  home.file.".local/bin/hyprland-lid-close" = {
+    source = ../config/hypr/lid-close.sh;
+    executable = true;
+  };
   home.file.".config/waybar".source = ../config/waybar;
   home.file.".config/swaync".source = ../config/swaync;
 

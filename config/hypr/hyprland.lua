@@ -299,6 +299,16 @@ hl.device({
 
 local mainMod = "SUPER"
 
+-- Lock the session manually.
+hl.bind("Print", hl.dsp.exec_cmd("hyprlock"))
+
+-- Lock the session and suspend only when the laptop lid closes.
+hl.bind(
+  "switch:on:Lid Switch",
+  hl.dsp.exec_cmd("systemd-cat --identifier=hyprlock-lid-close bash -c 'echo \"Lid-close event received.\"; exec \"$HOME/.local/bin/hyprland-lid-close\"'"),
+  { locked = true }
+)
+
 -- Launch applications
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))

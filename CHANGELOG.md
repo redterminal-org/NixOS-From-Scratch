@@ -1,6 +1,12 @@
 *CHANGELOG*
 
 ## 2.5.0
+### Feature: add Hyprlock with Print and lid-close locking
+* Add Hyprlock with a password prompt and Print-key activation.
+* Lock the session and suspend only on laptop lid closure during a Hyprland session.
+* Verify the session lock with Hyprland's documented status command before suspending.
+* Send lid-close diagnostics to the system journal and record the switch event.
+* Disable systemd-logind's independent lid handling so suspension is controlled by Hyprland.
 ### Added: recent version of GTL ("gtl") to "./config/bin/"
 * Switched the GTL ("gtl") binary to the most recent version: v1.4.4-fork
 ### Added: "Go" programming language; some tools for LazyVim

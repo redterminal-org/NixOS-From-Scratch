@@ -7,6 +7,7 @@
     ./modules/all-audio.nix
     ./modules/all-wayland.nix
     ./modules/all-hyprland.nix
+    ./modules/all-hyprlock.nix
     ./modules/all-user.nix
     ./modules/all-packages.nix
     ./modules/all-fonts.nix
