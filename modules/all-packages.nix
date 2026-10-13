@@ -28,6 +28,7 @@
     sane-backends # scanimage Package
     gocryptfs
     openssl
+    xauth
 
     # Hyprland tools
     wofi

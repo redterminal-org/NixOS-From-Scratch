@@ -24,6 +24,7 @@
     abook
     zbar
     tmux
+    borgbackup
 
     # Programming Languages
     python3

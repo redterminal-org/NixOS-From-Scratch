@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.5.0
+### Added: xauth, borgbackup
+* Added "xauth" to all-packages.nix
+* Added "borgbackup" to home-packages.nix
 ### Config: reduce Hyprland UI scaling on grumpy
 * Set the Hyprland monitor scale to 0.8 on grumpy.
 * Keep the default monitor scale at 1.0 on all other hosts.
