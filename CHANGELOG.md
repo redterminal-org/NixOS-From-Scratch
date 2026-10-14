@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 2.5.0
+### BUGFIX: hardware/sneezy.nix used UUIDs for partitions
+* Changed used partitions to use labels: EFI, SWAP and NIXOS
 ### Added: xauth, borgbackup
 * Added "xauth" to all-packages.nix
 * Added "borgbackup" to home-packages.nix
