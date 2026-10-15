@@ -1,6 +1,8 @@
 *CHANGELOG*
 
 ## 2.5.0
+### LazyVim: Added command ":BufferBytes"
+* Added a command ":BufferBytes" to see consumed bytes by a buffer
 ### BUGFIX: hardware/sneezy.nix used UUIDs for partitions
 * Changed used partitions to use labels: EFI, SWAP and NIXOS
 ### Added: xauth, borgbackup
