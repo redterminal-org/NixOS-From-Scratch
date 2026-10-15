@@ -1,5 +1,8 @@
 *CHANGELOG*
 
+## 2.6.0
+### CHANGELOG.md: updated
+
 ## 2.5.0
 ### LazyVim: Added command ":BufferBytes"
 * Added a command ":BufferBytes" to see consumed bytes by a buffer
