@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 2.6.0
+### LazyVim: Changed colorscheme to "tokyonight-storm"
 ### CHANGELOG.md: updated
 
 ## 2.5.0
