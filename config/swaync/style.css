@@ -1,4 +1,4 @@
-/* Tokyo Night Dark */
+/* Tokyo Night Storm */
 
 * {
   font-family: "JetBrainsMono Nerd Font Mono";
@@ -10,8 +10,8 @@
 }
 
 .notification {
-  background: #1a1b26;
-  border: 1px solid #3b4261;
+  background: #24283b;
+  border: 1px solid #565f89;
   border-radius: 8px;
   margin: 4px 8px;
   padding: 0;
@@ -43,7 +43,7 @@
 }
 
 .close-button:hover {
-  background: #24283b;
+  background: #1f2335;
   color: #7aa2f7;
 }
 
@@ -62,4 +62,3 @@
 .notification.critical .summary {
   color: #f7768e;
 }
-

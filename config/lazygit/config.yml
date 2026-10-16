@@ -14,27 +14,27 @@ customCommands:
 gui:
   theme:
     activeBorderColor:
-      - '#f8e45c'
+      - '#e0af68'
       - bold
     inactiveBorderColor:
-      - '#414868'
+      - '#565f89'
     searchingActiveBorderColor:
-      - '#f8e45c'
+      - '#e0af68'
       - bold
     optionsTextColor:
       - '#7aa2f7'
     selectedLineBgColor:
       - '#292e42'
     inactiveViewSelectedLineBgColor:
-      - '#24283b'
+      - '#1f2335'
     cherryPickedCommitFgColor:
       - '#7aa2f7'
     cherryPickedCommitBgColor:
-      - '#24283b'
+      - '#1f2335'
     markedBaseCommitFgColor:
       - '#e0af68'
     markedBaseCommitBgColor:
-      - '#24283b'
+      - '#1f2335'
     unstagedChangesColor:
       - '#f7768e'
 

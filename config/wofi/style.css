@@ -5,8 +5,8 @@
 
 window {
   width: 60%;
-  background-color: #1a1b26;
-  border: 1px solid #414868;
+  background-color: #24283b;
+  border: 1px solid #565f89;
   border-radius: 8px;
 }
 
@@ -14,8 +14,8 @@ window {
   margin: 8px;
   padding: 5px 8px;
   color: #a9b1d6;
-  background-color: #24283b;
-  border: 1px solid #414868;
+  background-color: #1f2335;
+  border: 1px solid #565f89;
   border-radius: 4px;
   font-size: 20px;
 }
@@ -39,7 +39,7 @@ window {
 }
 
 #entry:selected {
-  color: #1a1b26;
+  color: #24283b;
   background-color: #7aa2f7;
   border-radius: 4px;
 }

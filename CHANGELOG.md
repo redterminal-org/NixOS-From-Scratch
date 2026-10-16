@@ -1,6 +1,9 @@
 *CHANGELOG*
 
 ## 2.6.0
+### Config: align application themes with Tokyo Night Storm
+* Set Stylix's Base16 scheme to Tokyo Night Storm for GTK and Qt theming.
+* Align Kitty, Waybar, SwayNC, Wofi, Qutebrowser, LazyGit, Hyprland, and both Yazi themes with the Tokyo Night Storm palette.
 ### LazyVim: Changed colorscheme to "tokyonight-storm"
 ### CHANGELOG.md: updated
 
