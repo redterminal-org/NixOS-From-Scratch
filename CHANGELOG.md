@@ -1,5 +1,12 @@
 *CHANGELOG*
 
+## 3.0.0
+### Feature: update ESP32 Rust toolchains to latest releases
+* Use Rust and Cargo 1.99.1 to install the pinned espup release 0.18.0.
+* Refresh existing Xtensa ESP32 toolchains with espup's latest supported version instead of retaining the outdated 1.82.0.0 toolchain.
+* Keep toolchain activation idempotent by recording the espup version after a successful installation or update.
+* Keep ESP-IDF v5.1.4 and Arduino-ESP32 v3.0.7 unchanged.
+
 ## 2.6.0
 ### Config: align application themes with Tokyo Night Storm
 * Set Stylix's Base16 scheme to Tokyo Night Storm for GTK and Qt theming.

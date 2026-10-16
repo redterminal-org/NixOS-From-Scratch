@@ -1,6 +1,13 @@
 # Python Caches
 __pycache__/
 
+# Build outputs
+/target/
+/idf/build/
+/sdkconfig
+/sdkconfig.old
+/.espup/
+
 # other
 flake.lock
 chatgpt-*
