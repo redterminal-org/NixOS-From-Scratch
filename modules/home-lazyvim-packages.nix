@@ -7,6 +7,7 @@
     fzf
     par
     nixfmt
+    rustfmt
 
     # Runtime for LazyVim plugins / tooling
     nodejs
@@ -20,9 +21,13 @@
     shfmt
     nil
     gopls
+    rust-analyzer
+    ruff
 
     # Linters
     shellcheck
     golangci-lint
+    clippy
+    markdownlint-cli2
   ];
 }

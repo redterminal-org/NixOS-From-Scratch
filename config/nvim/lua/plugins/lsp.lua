@@ -4,9 +4,7 @@ return {
     opts = {
       servers = {
         lua_ls = {},
-        nil_ls = {},
-        pyright = {},
-        gopls = {},
+        bashls = {},
       },
     },
   },

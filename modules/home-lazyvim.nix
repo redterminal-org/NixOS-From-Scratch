@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.file.".config/nvim/lua/config/keymaps.lua".source = ../config/nvim/lua/config/keymaps.lua;
@@ -29,6 +29,39 @@
 
   programs.lazyvim = {
     enable = true;
+
+    extras = {
+      # Go
+      lang.go = {
+        enable = true;
+        installDependencies = false;
+        installRuntimeDependencies = false;
+      };
+
+      # Nix: stellt unter anderem nil_ls und nixfmt ein
+      lang.nix.enable = true;
+
+      # Python
+      lang.python = {
+        enable = true;
+        installDependencies = false;
+        installRuntimeDependencies = false;
+      };
+
+      # Rust – falls du das Extra bereits verwendest
+      lang.rust.enable = true;
+    };
+
+    treesitterParsers = with pkgs.vimPlugins.nvim-treesitter-parsers; [
+      bash
+      rust
+      go
+      gomod
+      gowork
+      gosum
+      rust
+      ron
+    ];
 
     plugins.yazi = ''
       return {

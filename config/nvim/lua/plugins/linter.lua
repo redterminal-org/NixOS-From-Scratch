@@ -5,7 +5,6 @@ return {
       linters_by_ft = {
         sh = { "shellcheck" },
         bash = { "shellcheck" },
-        go = { "golangcilint" },
       },
     },
   },
