@@ -1,12 +1,20 @@
+# Import export-esp.sh, if it exists
+[ -f "/var/lib/esp32-dev/export-esp.sh" ] && source /var/lib/esp32-dev/export-esp.sh
+
 # if ~/bin exists, add it to path
-if [ -x $HOME/bin ]; then
-  PATH=$PATH:$HOME/bin
-fi
+#if [ -d $HOME/bin ]; then
+#  export PATH=$PATH:$HOME/bin
+#fi
 
 # if ~/.local/bin exists, add it to path
-if [ -x $HOME/.local/bin ]; then
-  PATH=$PATH:$HOME/.local/bin
-fi
+#if [ -d $HOME/.local/bin ]; then
+#  export PATH=$PATH:$HOME/.local/bin
+#fi
+
+# Import ~/.cargo/bin into path if it exists
+#if [ -d $HOME/.cargo/bin ]; then
+#  export PATH=$PATH:$HOME/.cargo/bin
+#fi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -123,6 +131,25 @@ fi
 if [ -f ~/.bashrc.local ]; then
   . ~/.bashrc.local
 fi
+
+# Restore the NixOS environment if its initialization marker is set
+# but LD_LIBRARY_PATH is missing.
+if [[ -n "${__NIXOS_SET_ENVIRONMENT_DONE:-}" && -z "${LD_LIBRARY_PATH:-}" ]]; then
+  unset __NIXOS_SET_ENVIRONMENT_DONE
+  unset __ETC_PROFILE_DONE
+  . /etc/profile
+fi
+
+# Ensure user-local executable directories are available in PATH.
+for dir in "$HOME/bin" "$HOME/.local/bin" "$HOME/.cargo/bin"; do
+  if [ -d "$dir" ]; then
+    case ":$PATH:" in
+    *":$dir:"*) ;;
+    *) PATH="$dir:$PATH" ;;
+    esac
+  fi
+done
+export PATH
 
 # Enable STARSHIP prompt
 which starship >/dev/null 2>&1 && eval "$(starship init bash)"
