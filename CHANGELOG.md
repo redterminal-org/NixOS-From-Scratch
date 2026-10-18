@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 3.0.0
+### README.md: Better formatting
 ### LazyVim: Added ".markdownlint-cli2.yaml" to project
 ### LazyVim: Made lnaguage configuration more declarative
 ### BUGFIX: removed "ollama-esp32-dev" specialisation from "hosts/fatty.nix"

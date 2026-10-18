@@ -1,8 +1,12 @@
 # NixOS-From-Scratch - NixOS 26.05
 
-A modular NixOS configuration built from scratch with a focus on a clean separation between system and user configuration, and a Wayland desktop environment based on Hyprland.
+A modular NixOS configuration built from scratch with a focus on a clean
+separation between system and user configuration, and a Wayland desktop
+environment based on Hyprland.
 
-The configuration includes NixOS 26.05, Home Manager, Hyprland, Waybar, Wofi, SwayNC, LazyVim, PipeWire, NetworkManager, GPG and SSH integration, as well as separate configurations for real systems and regression VMs.
+The configuration includes NixOS 26.05, Home Manager, Hyprland, Waybar, Wofi,
+SwayNC, LazyVim, PipeWire, NetworkManager, GPG and SSH integration, as well as
+separate configurations for real systems and regression VMs.
 
 **Mirrors:** \
 [https://github.com/redterminal-org/NixOS-From-Scratch](https://github.com/redterminal-org/NixOS-From-Scratch) \
@@ -12,21 +16,30 @@ The configuration includes NixOS 26.05, Home Manager, Hyprland, Waybar, Wofi, Sw
 
 **!!! WARNING !!!**
 
-This is mainly for my personal learning purposes but can be used for learning and testing by others as well. This is my **first** try with NixOS, so don't expect too much.
+This is mainly for my personal learning purposes but can be used for learning
+and testing by others as well. This is my **first** try with NixOS, so don't
+expect too much.
 
-I expect you to have a basic knowledge on how to set up a basic NixOS system from the NixOS installer, like creating a partition layout and do a basic `nixos-generate-config` on your mounted filesystem.
+I expect you to have a basic knowledge on how to set up a basic NixOS system
+from the NixOS installer, like creating a partition layout and do a basic
+`nixos-generate-config` on your mounted filesystem.
 
-You can use the Discussion section on the Github repository, if you have problems or questions related to this NixOS configuration. You can also use the Issue Tracker on the Github and Codeberg.org, if you found a problem.
+You can use the Discussion section on the Github repository, if you have
+problems or questions related to this NixOS configuration. You can also use the
+Issue Tracker on the Github and Codeberg.org, if you found a problem.
 
 ---
 
 ## Adapt the Configuration
 
-This configuration is intended as a starting point. It can be used as it is but the system should be adapted to your own needs before use.
+This configuration is intended as a starting point. It can be used as it is but
+the system should be adapted to your own needs before use.
 
 ### Forking the Repository
 
-If you want to make personal changes to this configuration, fork the repository first and work on your own fork. This keeps your changes separate from the original repository and makes it easier to merge future upstream changes.
+If you want to make personal changes to this configuration, fork the repository
+first and work on your own fork. This keeps your changes separate from the
+original repository and makes it easier to merge future upstream changes.
 
 ### Adjustments
 
@@ -54,7 +67,8 @@ The following settings should be reviewed and adjusted:
 - **Packages and applications**
   - Adjust `modules/all-packages.nix` for system-wide packages.
   - Adjust `modules/home-packages.nix` for user packages.
-  - Adjust `modules/home-lazyvim-packages.nix` for LazyVim development tools and language servers.
+  - Adjust `modules/home-lazyvim-packages.nix` for LazyVim development tools and
+    language servers.
 
 - **Ollama and LLMs**
   - Ollama is enabled through the `ollama` specialisation on physical systems.
@@ -62,14 +76,19 @@ The following settings should be reviewed and adjusted:
   - The LazyVim `gen.nvim` translation integration uses `translategemma:12b`.
   - CodeCompanion uses `gpt-oss:20b` for chat and inline coding interactions.
   - Both models must be downloaded manually after installation:
+
     ```bash
     ollama pull translategemma:12b
     ollama pull gpt-oss:20b
     ```
-  - On the `fatty` system, the Ollama specialisation uses the ROCm package for the AMD GPU and is configured to wait for the required GPU device nodes during boot.
+
+  - On the `fatty` system, the Ollama specialisation uses the ROCm package for
+    the AMD GPU and is configured to wait for the required GPU device nodes during
+    boot.
 
 - **Hyprland**
-  - Adjust `config/hypr/hyprland.lua` to your monitors, keybindings, applications, input devices and preferred appearance.
+  - Adjust `config/hypr/hyprland.lua` to your monitors, keybindings,
+    applications, input devices and preferred appearance.
 
 - **VM configuration**
   - Review `vm.nix` if the regression VM is used.
@@ -77,7 +96,9 @@ The following settings should be reviewed and adjusted:
 
 ## NixOS Outputs
 
-The flake provides one configuration per physical machine and two regression VM configurations. Physical machines share the same system configuration, while their hardware and hostnames are kept in separate host modules.
+The flake provides one configuration per physical machine and two regression VM
+configurations. Physical machines share the same system configuration, while
+their hardware and hostnames are kept in separate host modules.
 
 ### `.#sleepy`
 
@@ -99,13 +120,16 @@ sudo nixos-rebuild switch --flake .#sneezy
 
 NixOS installation for the AMD system with hostname `fatty`.
 
-The `fatty` host provides an Ollama specialisation configured to use the ROCm-enabled Ollama package and waits for the required AMD GPU device nodes before starting Ollama.
+The `fatty` host provides an Ollama specialisation configured to use the
+ROCm-enabled Ollama package and waits for the required AMD GPU device nodes
+before starting Ollama.
 
 ```bash
 sudo nixos-rebuild switch --flake .#fatty
 ```
 
-The `fatty` host also configures the Ollama specialisation as the systemd-boot default for newly installed generations.
+The `fatty` host also configures the Ollama specialisation as the systemd-boot
+default for newly installed generations.
 
 ### Specialisations
 
@@ -129,7 +153,8 @@ or:
 sudo nixos-rebuild switch --flake .#fatty --specialisation ollama
 ```
 
-The LLM used by the LazyVim `gen.nvim` translation integration must be downloaded manually after installation:
+The LLM used by the LazyVim `gen.nvim` translation integration must be
+downloaded manually after installation:
 
 ```bash
 ollama pull translategemma:12b
@@ -141,7 +166,8 @@ CodeCompanion uses `gpt-oss:20b` for chat and inline coding interactions:
 ollama pull gpt-oss:20b
 ```
 
-Both models can be installed on the same system. The configuration manages their residency so that the models do not need to remain loaded simultaneously.
+Both models can be installed on the same system. The configuration manages their
+residency so that the models do not need to remain loaded simultaneously.
 
 LazyVim provides the following translation prompts:
 
@@ -166,7 +192,8 @@ Interactive regression VM with Ollama enabled.
 nixos-rebuild build-vm-with-bootloader --flake .#ollama-vm
 ```
 
-The LLM used by the LazyVim `gen.nvim` translation integration must be downloaded manually in the VM:
+The LLM used by the LazyVim `gen.nvim` translation integration must be
+downloaded manually in the VM:
 
 ```bash
 ollama pull translategemma:12b
@@ -181,9 +208,11 @@ The selected text is replaced with the generated translation.
 
 ## Key Bindings
 
-The following are the most important key bindings configured in `config/hypr/hyprland.lua`.
+The following are the most important key bindings configured in
+`config/hypr/hyprland.lua`.
 
-`SUPER` refers to the `Super`/Windows key. The right `CTRL` key is additionally configured as `Super_R`.
+`SUPER` refers to the `Super`/Windows key. The right `CTRL` key is additionally
+configured as `Super_R`.
 
 ### Applications
 
@@ -352,7 +381,8 @@ The complete key binding configuration can be found in `config/hypr/hyprland.lua
 
 ## Importing Secrets
 
-Private data is not stored in the Nix configuration or Nix store. It can be imported interactively from an SSH server during the first login.
+Private data is not stored in the Nix configuration or Nix store. It can be
+imported interactively from an SSH server during the first login.
 
 1. Make sure the SSH server is reachable from the NixOS system.
 2. Start Hyprland and log in as the configured user.
@@ -360,11 +390,14 @@ Private data is not stored in the Nix configuration or Nix store. It can be impo
 4. Enter the SSH destination when prompted:
    - `user@server`
 5. Enter the path to the Secrets directory when prompted.
-6. The script downloads the directory and imports the contained GPG keys, SSH keys, password store and Rogallo data.
+6. The script downloads the directory and imports the contained GPG keys, SSH
+   keys, password store and Rogallo data.
 
 ### GPG Keys
 
-The `gnupg/public.asc` file contains the exported public GPG keys, while `gnupg/secret.asc` contains the exported private GPG keys. Both files are mandatory.
+The `gnupg/public.asc` file contains the exported public GPG keys, while
+`gnupg/secret.asc` contains the exported private GPG keys. Both files are
+mandatory.
 
 They can be created from an existing GPG keyring with:
 
@@ -373,15 +406,19 @@ gpg --armor --export > public.asc
 gpg --armor --export-secret-keys > secret.asc
 ```
 
-The public key file can be distributed freely, while the secret key file contains private key material and must be protected accordingly.
+The public key file can be distributed freely, while the secret key file
+contains private key material and must be protected accordingly.
 
 The files must be placed in the `gnupg/` directory of the Secrets directory.
 
 ### SSH, Password Store and Rogallo Data
 
-The `ssh/`, `password-store/` and `rogallo/` directories are copied to the corresponding locations in the user's home directory. Their contents are generally optional and can contain only the files that are actually needed.
+The `ssh/`, `password-store/` and `rogallo/` directories are copied to the
+corresponding locations in the user's home directory. Their contents are
+generally optional and can contain only the files that are actually needed.
 
-The `ssh/` directory can contain multiple SSH key pairs as well as other SSH configuration files such as `known_hosts` or `authorized_keys`:
+The `ssh/` directory can contain multiple SSH key pairs as well as other SSH
+configuration files such as `known_hosts` or `authorized_keys`:
 
 ```text
 ssh/
@@ -393,7 +430,9 @@ ssh/
 └── known_hosts
 ```
 
-The `password-store/` directory contains the initial passwords for the password store. It can also contain One-Time-Password secrets in `password-store/otp/`. These OTP secrets use the following format:
+The `password-store/` directory contains the initial passwords for the password
+store. It can also contain One-Time-Password secrets in `password-store/otp/`.
+These OTP secrets use the following format:
 
 ```text
 otpauth://totp/<name>?secret=<secret>&issuer=<issuer>
@@ -409,16 +448,19 @@ password-store/
     └── example
 ```
 
-The `rogallo/` directory does not have to contain all available Rogallo data. For example, it can contain only the client certificates:
+The `rogallo/` directory does not have to contain all available Rogallo data.
+For example, it can contain only the client certificates:
 
 ```text
 rogallo/
 └── client_certificates/
 ```
 
-Other files such as bookmarks, command history or navigation history can be omitted if they are not needed.
+Other files such as bookmarks, command history or navigation history can be
+omitted if they are not needed.
 
-The Secrets directory on the SSH server must therefore contain at least the following GPG files:
+The Secrets directory on the SSH server must therefore contain at least the
+following GPG files:
 
 ```text
 secrets/
@@ -433,7 +475,9 @@ secrets/
     └── ...
 ```
 
-Only `gnupg/public.asc` and `gnupg/secret.asc` are mandatory. The `ssh/`, `password-store/` and `rogallo/` directories can contain any supported data or can be empty if that particular data is not required.
+Only `gnupg/public.asc` and `gnupg/secret.asc` are mandatory. The `ssh/`,
+`password-store/` and `rogallo/` directories can contain any supported data or
+can be empty if that particular data is not required.
 
 The directory name itself is arbitrary. Its path is entered during the import process.
 
@@ -448,10 +492,14 @@ The imported data is copied to:
 
 The GPG keys are imported into the user's local GPG keyring.
 
-If the import is intentionally skipped, a marker is created so that the user is not asked again. If the import fails before completion, no success marker is created and the import can be attempted again at the next login.
+If the import is intentionally skipped, a marker is created so that the user is
+not asked again. If the import fails before completion, no success marker is
+created and the import can be attempted again at the next login.
 
 ## License
 
-Copyright (C) 2026 fab@redterminal.org
+Copyright (C) 2026 [fab@redterminal.org]
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, version 3 only.
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, version 3 only.
