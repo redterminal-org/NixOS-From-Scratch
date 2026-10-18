@@ -1,6 +1,10 @@
 *CHANGELOG*
 
 ## 3.0.0
+### Removed: Specialisation "esp32-dev"
+* The Specialisation "esp32-dev" was removed
+* The Rust ESP32 development environment can now be installed with
+  "install-rust-esp32.sh"
 ### Feature: update ESP32 Rust toolchains to latest releases
 * Use Rust and Cargo 1.99.1 to install the pinned espup release 0.18.0.
 * Refresh existing Xtensa ESP32 toolchains with espup's latest supported version instead of retaining the outdated 1.82.0.0 toolchain.

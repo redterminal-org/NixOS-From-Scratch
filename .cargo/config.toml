@@ -1,5 +1,0 @@
-[build]
-target = "xtensa-esp32-espidf"
-
-[env]
-ESP_IDF_VERSION = "tag:v5.1.4"

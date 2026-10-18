@@ -14,6 +14,7 @@
     ./modules/all-nix.nix
     ./modules/all-printing.nix
     ./modules/all-zfs.nix
+    ./modules/all-esp32-dev.nix
   ];
 
   stylix = {

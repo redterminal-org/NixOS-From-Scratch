@@ -1,5 +1,5 @@
 # Import export-esp.sh, if it exists
-[ -f "/var/lib/esp32-dev/export-esp.sh" ] && source /var/lib/esp32-dev/export-esp.sh
+[ -f "${HOME}/.cargo/export-esp.sh" ] && source "${HOME}/.cargo/export-esp.sh"
 
 # if ~/bin exists, add it to path
 #if [ -d $HOME/bin ]; then
