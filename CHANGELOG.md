@@ -1,6 +1,7 @@
 *CHANGELOG*
 
 ## 3.0.0
+### BUGFIX: removed "ollama-esp32-dev" specialisation from "hosts/fatty.nix"
 ### Removed: Specialisation "esp32-dev"
 * The Specialisation "esp32-dev" was removed
 * The Rust ESP32 development environment can now be installed with
