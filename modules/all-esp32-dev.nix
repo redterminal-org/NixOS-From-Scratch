@@ -44,7 +44,6 @@
   ];
 
   environment.sessionVariables = {
-    RUSTUP_TOOLCHAIN = "esp";
     IDF_TARGET = "esp32";
     ESP_IDF_VERSION = "tag:v5.1.4";
   };
@@ -58,7 +57,6 @@
       ]
     }''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
-    export RUSTUP_TOOLCHAIN=esp
     export IDF_TARGET=esp32
     export ESP_IDF_VERSION=tag:v5.1.4
   '';
