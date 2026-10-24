@@ -16,7 +16,7 @@
 
     "modules-right": [
         "custom/sep",
-        "network",
+        "custom/network-status",
         "custom/sep",
         "pulseaudio",
         "custom/sep",
@@ -96,9 +96,12 @@
         "exec-if": "for supply in /sys/class/power_supply/*; do [ -f \"$supply/type\" ] && [ \"$(cat \"$supply/type\")\" = Battery ] && exit 0; done; exit 1",
         "interval": 10
     },
-    "network": {
-        "format": "Online",
-        "format-disconnected": "Disconnected ⚠"
+    "custom/network-status": {
+        "exec": "$HOME/.config/waybar/network-status.sh",
+        "return-type": "json",
+        "interval": 10,
+        "format": "{}",
+        "tooltip": false
     },
     "custom/sep": {
         "format": "|",

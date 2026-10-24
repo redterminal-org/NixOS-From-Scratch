@@ -99,12 +99,17 @@ button:hover {
     border-bottom: 4px solid @cyn;
 }
 
-#network {
+#custom-network-status {
     color: @blu;
     border-bottom: 4px solid @blu;
 }
 
-#network.disconnected {
+#custom-network-status.local {
+    color: @ylw;
+    border-bottom: 4px solid @ylw;
+}
+
+#custom-network-status.disconnected {
     background-color: @red;
 }
 
