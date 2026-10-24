@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.1.0
+### CHANGELOG.md: Updated
+
 ## 3.0.0
 ### Config: distinguish local network from internet connectivity in Waybar
 * Detect local connectivity separately from internet access using the Arch Linux
