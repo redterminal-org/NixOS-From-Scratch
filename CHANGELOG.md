@@ -1,6 +1,11 @@
 # CHANGELOG
 
 ## 3.1.0
+### LazyVim: made all plugins declarative and did diverse config changes
+* Moved all additional plugins from './config/nvim/lua/plugins' to 'modules/home-lazyvim.nix'
+* Added new Link formats for VimWiki: 'yazi:' for directories 'zathura:' for PDFs
+* Added better tables and rendering for VimWiki markdown
+* Open zathura from yazi (from shell or LazyVim) and view PDF (swallow)
 ### CHANGELOG.md: Updated
 
 ## 3.0.0

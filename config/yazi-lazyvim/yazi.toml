@@ -1,6 +1,16 @@
 [mgr]
 ratio = [2, 3, 4]
 
+[opener]
+pdf = [
+  { run = 'zathura "$@"', block = true, for = "unix" },
+]
+
+[open]
+rules = [
+  { mime = "application/pdf", use = "pdf" },
+]
+
 [[plugin.prepend_previewers]]
 mime = "image/*"
 run = "noop"

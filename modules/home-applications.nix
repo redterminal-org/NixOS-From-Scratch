@@ -48,7 +48,7 @@
   home.file.".local/bin/yazi" = {
     text = ''
       #!${pkgs.bash}/bin/bash
-      exec ${pkgs.kitty}/bin/kitty --class yazi ${pkgs.yazi}/bin/yazi "$@"
+      exec ${pkgs.kitty}/bin/kitty --class OnTop ${pkgs.yazi}/bin/yazi "$@"
     '';
     executable = true;
   };
