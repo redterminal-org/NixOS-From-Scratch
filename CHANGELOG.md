@@ -1,6 +1,14 @@
 # CHANGELOG
 
 ## 3.1.0
+### Refactor: organize system modules into directories
+* Group NixOS modules under 'system/', 'desktop/', 'hardware/',
+  'development/', 'services/', and 'packages/'.
+* Add default.nix aggregators for each module group and update 'all.nix'
+  to import the groups.
+* Move the Stylix configuration from 'all.nix' to
+  'modules/desktop/stylix.nix'.
+* Keep all 'home-*.nix' modules in their existing locations.
 ### Added Package "python313Packages.gtts" and "atd" Service
 ### LazyVim: made all plugins declarative and did diverse config changes
 * Moved all additional plugins from './config/nvim/lua/plugins' to 'modules/home-lazyvim.nix'
