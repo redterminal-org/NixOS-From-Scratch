@@ -25,6 +25,7 @@
     zbar
     tmux
     borgbackup
+    python313Packages.gtts
 
     # Programming Languages
     python3

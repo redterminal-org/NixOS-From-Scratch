@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 3.1.0
+### Added Package "python313Packages.gtts" and "atd" Service
 ### LazyVim: made all plugins declarative and did diverse config changes
 * Moved all additional plugins from './config/nvim/lua/plugins' to 'modules/home-lazyvim.nix'
 * Added new Link formats for VimWiki: 'yazi:' for directories 'zathura:' for PDFs

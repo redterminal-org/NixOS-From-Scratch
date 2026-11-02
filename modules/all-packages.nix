@@ -29,6 +29,7 @@
     gocryptfs
     openssl
     xauth
+    at
 
     # Hyprland tools
     wofi
