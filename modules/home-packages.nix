@@ -26,6 +26,7 @@
     tmux
     borgbackup
     python313Packages.gtts
+    ausweisapp
 
     # Programming Languages
     python3

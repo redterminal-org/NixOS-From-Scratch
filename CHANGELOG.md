@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.2.0
+### Added "ausweisapp" Community Version
+
 ## 3.1.0
 ### Refactor: organize system modules into directories
 * Group NixOS modules under 'system/', 'desktop/', 'hardware/',
