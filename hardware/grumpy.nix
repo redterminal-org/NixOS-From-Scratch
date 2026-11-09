@@ -17,6 +17,7 @@
   fileSystems."/" =
     { device = "/dev/mapper/vg--grumpy-NIXOS";
       fsType = "ext4";
+      options = [ "x-systemd.device-timeout=infinity" ];
     };
 
   fileSystems."/boot" =

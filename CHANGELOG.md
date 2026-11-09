@@ -1,6 +1,11 @@
 # CHANGELOG
 
 ## 3.2.0
+### SYSTEM UPGRADE: NixOS 26.11
+* Track the NixOS 26.11 development cycle through `nixos-unstable`.
+* Align Home Manager and Stylix with their development branches.
+* Track the latest LazyVim release through the unpinned lazyvim-nix input.
+* Prevent systemd initrd timeouts on grumpy's LUKS/LVM root device.
 ### Added hyprland keybinding to swap windowsplits
 * "SUPER + SHIFT + H" swaps current split
 ### Added "ausweisapp" Community Version
