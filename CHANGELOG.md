@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## 3.2.0
+### Added hyprland keybinding to swap windowsplits
+* "SUPER + SHIFT + H" swaps current split
 ### Added "ausweisapp" Community Version
 
 ## 3.1.0

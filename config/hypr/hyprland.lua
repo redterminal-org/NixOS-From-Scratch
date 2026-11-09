@@ -307,7 +307,8 @@ hl.bind("Print", hl.dsp.exec_cmd("hyprlock"))
 -- Lock the session and suspend only when the laptop lid closes.
 hl.bind(
   "switch:on:Lid Switch",
-  hl.dsp.exec_cmd("systemd-cat --identifier=hyprlock-lid-close bash -c 'echo \"Lid-close event received.\"; exec \"$HOME/.local/bin/hyprland-lid-close\"'"),
+  hl.dsp.exec_cmd(
+  "systemd-cat --identifier=hyprlock-lid-close bash -c 'echo \"Lid-close event received.\"; exec \"$HOME/.local/bin/hyprland-lid-close\"'"),
   { locked = true }
 )
 
@@ -334,6 +335,8 @@ hl.bind(mainMod .. " + H", hl.dsp.window.swap({ direction = "left" }))
 hl.bind(mainMod .. " + J", hl.dsp.window.swap({ direction = "down" }))
 hl.bind(mainMod .. " + K", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + L", hl.dsp.window.swap({ direction = "right" }))
+-- Swap the two halves of the current split.
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.layout("swapsplit"))
 
 -- wofi - Password menu
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/wofi/passmenu.sh"))
