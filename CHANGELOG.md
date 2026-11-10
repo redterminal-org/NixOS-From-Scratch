@@ -1,6 +1,10 @@
 # CHANGELOG
 
 ## 3.2.0
+### FIX: Native Lualine diagnostics
+* Disable Trouble's document-symbol integration in the statusline.
+* Configure Lualine to use Neovim's native diagnostics source.
+* Declare LazyVim options through the Home Manager module.
 ### SYSTEM UPGRADE: NixOS 26.11
 * Track the NixOS 26.11 development cycle through `nixos-unstable`.
 * Align Home Manager and Stylix with their development branches.

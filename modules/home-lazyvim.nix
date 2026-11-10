@@ -7,8 +7,6 @@
 
   home.file.".config/nvim/lua/config/keymaps.lua".source = ../config/nvim/lua/config/keymaps.lua;
 
-  home.file.".config/nvim/lua/config/options.lua".source = ../config/nvim/lua/config/options.lua;
-
   # ---------------------------------------------------------------
   # UltiSnips
   # ---------------------------------------------------------------
@@ -27,6 +25,17 @@
 
   programs.lazyvim = {
     enable = true;
+
+    config.options = ''
+      vim.g.trouble_lualine = false
+
+      -- Add command ":BufferBytes" to see how many bytes a buffer consumes
+      vim.api.nvim_create_user_command("BufferBytes", function()
+        local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+        local bytes = #table.concat(lines, "\n")
+        print(bytes .. " Bytes")
+      end, {})
+    '';
 
     # -------------------------------------------------------------
     # LazyVim Extras
@@ -80,6 +89,32 @@
     # -------------------------------------------------------------
 
     plugins = {
+
+      # -----------------------------------------------------------
+      # Native Lualine diagnostics
+      # -----------------------------------------------------------
+
+      lualine = ''
+        return {
+          {
+            "nvim-lualine/lualine.nvim",
+            opts = function(_, opts)
+              for _, section in pairs(opts.sections) do
+                for _, component in ipairs(section) do
+                  if type(component) == "table"
+                    and component[1] == "diagnostics" then
+                    component.sources = { "nvim_diagnostic" }
+                    component.sections = { "error", "warn", "info", "hint" }
+                    component.update_in_insert = false
+                    component.always_visible = false
+                    return
+                  end
+                end
+              end
+            end,
+          },
+        }
+      '';
 
       # -----------------------------------------------------------
       # Gopher syntax
