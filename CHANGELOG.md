@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 3.2.0
+### FIX: set cursor inactive_timeout to 20 (maximum)
 ### Refactor: modularize LazyVim and add UTF-8-aware par
 * Split LazyVim options, packages, and plugins into focused modules.
 * Define all 12 custom keymaps through the LazyVim Home Manager module.
