@@ -16,6 +16,7 @@
               linters_by_ft = {
                 sh = { "shellcheck" },
                 bash = { "shellcheck" },
+                nix = { "statix" },
               },
             },
           },
@@ -30,6 +31,17 @@
               servers = {
                 lua_ls = {},
                 bashls = {},
+                nil_ls = {
+                  settings = {
+                    ["nil"] = {
+                      nix = {
+                        flake = {
+                          autoArchive = false,
+                        },
+                      },
+                    },
+                  },
+                },
               },
             },
           },

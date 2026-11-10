@@ -39,5 +39,6 @@ in
     golangci-lint
     clippy
     markdownlint-cli2
+    statix
   ];
 }
