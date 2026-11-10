@@ -1,6 +1,12 @@
 # CHANGELOG
 
 ## 3.2.0
+### Refactor: modularize LazyVim and add UTF-8-aware par
+* Split LazyVim options, packages, and plugins into focused modules.
+* Define all 12 custom keymaps through the LazyVim Home Manager module.
+* Preserve the existing editor configuration and install the multibyte-enabled
+  `par` fork from a hash-pinned GitHub archive.
+* Reuse the modular LazyVim configuration for the root Home Manager user.
 ### FIX: Native Lualine diagnostics
 * Disable Trouble's document-symbol integration in the statusline.
 * Configure Lualine to use Neovim's native diagnostics source.

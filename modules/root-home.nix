@@ -5,8 +5,7 @@
     lazyvim.homeManagerModules.default
 
     ./home-shell.nix
-    ./home-lazyvim.nix
-    ./home-lazyvim-packages.nix
+    ./lazyvim
   ];
 
   home.activation.ensureGnuPGDirectory =

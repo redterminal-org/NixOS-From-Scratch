@@ -9,8 +9,7 @@
     ./modules/home-private.nix
     ./modules/home-applications.nix
     ./modules/home-desktop.nix
-    ./modules/home-lazyvim.nix
-    ./modules/home-lazyvim-packages.nix
+    ./modules/lazyvim
     ./modules/home-packages.nix
   ];
 
