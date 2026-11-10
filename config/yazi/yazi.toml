@@ -3,7 +3,7 @@ ratio = [2, 3, 4]
 
 [opener]
 pdf = [
-  { run = 'zathura "$@"', block = true, for = "unix" },
+  { run = 'zathura %s', block = true, for = "unix" },
 ]
 
 [open]

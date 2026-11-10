@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## 3.2.0
+### FIX: Open PDFs in Zathura from normal Yazi
+* Replace the unsupported `$@` argument expansion with Yazi's `%s` file
+  path placeholder.
 ### LazyVim: added "statix" linter and set autoarchive = false
 ### FIX: set cursor inactive_timeout to 20 (maximum)
 ### Refactor: modularize LazyVim and add UTF-8-aware par
