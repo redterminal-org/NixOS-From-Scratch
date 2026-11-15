@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 3.2.0
+### FIX: Added "qutebrowser-3.7.0" to allowed insecure packages
 ### FIX: Open PDFs in Zathura from normal Yazi
 * Replace the unsupported `$@` argument expansion with Yazi's `%s` file
   path placeholder.
