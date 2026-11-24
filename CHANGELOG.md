@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ## 3.2.0
+### Changed: Qutebrowser
+* Removed: Qutebrowser removed from insecure packages list
+* Changed: Qutebrowser 'yt' invidious URL changed
 ### Changed: removed 'boot.loader.systemd-boot.extraInstallCommands' from hosts
 ### Updated: all.snippets (Ultisnips)
 ### Updated: vimwiki.snippets (Ultisnips)

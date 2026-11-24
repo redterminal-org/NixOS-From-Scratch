@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config.permittedInsecurePackages = [
-    "qutebrowser-3.7.0"
-  ];
-
   environment.systemPackages = with pkgs; [
     wget
     curl

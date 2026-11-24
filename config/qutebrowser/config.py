@@ -115,7 +115,7 @@ c.url.searchengines = {
     'tr': 'https://www.linguee.com/english-german/search?source=auto&query={}',
     'ts': 'https://www.openthesaurus.de/synonyme/{}',
     'wp': 'https://de.wikipedia.org/w/index.php?search={}',
-    'yt': 'https://inv.thepixora.com/search?q={}',
+    'yt': 'https://invidious.tiekoetter.com/search?q={}',
 }
 
 
