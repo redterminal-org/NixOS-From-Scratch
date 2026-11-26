@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 3.2.0
+### Radio: added "Real Roots Radio" stream to script
 ### Added: yt-dlp; Removed: ausweisapp
 ### Changed: Qutebrowser
 * Removed: Qutebrowser removed from insecure packages list
