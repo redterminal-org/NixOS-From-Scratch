@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 3.2.0
+### Added: yt-dlp; Removed: ausweisapp
 ### Changed: Qutebrowser
 * Removed: Qutebrowser removed from insecure packages list
 * Changed: Qutebrowser 'yt' invidious URL changed

@@ -26,7 +26,7 @@
     tmux
     borgbackup
     python313Packages.gtts
-    ausweisapp
+    yt-dlp
 
     # Programming Languages
     python3
