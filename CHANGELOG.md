@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## 3.2.0
+### FIX: Limited the "memory" display in waybar to two decimal places.
 ### Radio: added "Real Roots Radio" stream to script
 ### Added: yt-dlp; Removed: ausweisapp
 ### Changed: Qutebrowser

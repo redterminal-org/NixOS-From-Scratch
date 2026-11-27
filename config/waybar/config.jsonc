@@ -68,7 +68,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "Mem: {used}GiB"
+        "format": "Mem: {used:0.2f}GiB"
     },
     "disk": {
         "interval": 60,
